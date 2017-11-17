@@ -14,8 +14,9 @@ namespace InterviewSolutions
             Palindrome pal = new Palindrome();
             string palindromCharacter = Console.ReadLine();
             List<string> lstOfPermutations = new List<string>();
-            lstOfPermutations.Add(palindromCharacter); 
-            if (pal.IsPermutationOfPalindrome(lstOfPermutations))
+            lstOfPermutations.Add(palindromCharacter);
+            pal.isPermuationPalindrome(palindromCharacter); 
+            if (pal.isPermuationPalindrome(palindromCharacter))
             {
                 Console.WriteLine(String.Format("The input character is a Palindrome {0}", palindromCharacter));
                 Console.Read();  

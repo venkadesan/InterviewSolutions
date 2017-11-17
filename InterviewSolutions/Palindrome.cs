@@ -8,16 +8,17 @@ namespace InterviewSolutions
 {
     public class Palindrome
     {
-        public  Boolean IsPermutationOfPalindrome(List<string> lstOfPalindromes)
+        #region IsPermutationOfPalindrome
+        public Boolean IsPermutationOfPalindrome(List<string> lstOfPalindromes)
         {
             try
             {
                 if (lstOfPalindromes != null && lstOfPalindromes.Count > 0)
                 {
-                    foreach(string pal in lstOfPalindromes)
+                    foreach (string pal in lstOfPalindromes)
                     {
                         int[] table = buildCharFrequencyTable(pal);
-                        return checkMaxOneOdd(table);  
+                        return checkMaxOneOdd(table);
                     }
                 }
             }
@@ -27,7 +28,53 @@ namespace InterviewSolutions
             }
             return false;
         }
+        #endregion
 
+        #region isPermuationPalindrome
+        public Boolean isPermuationPalindrome(string characters)
+        {
+            int bitVector = createBitVector(characters);
+            return bitVector == 0 || checkExactlyOneBitSet(bitVector);
+        }
+        #endregion
+
+        #region createBitVector
+        private int createBitVector(string phrase)
+        {
+            int bitVector = 0;
+            foreach (char c in phrase.ToCharArray())
+            {
+                int x = getCharNumbers(c);
+                bitVector = toggle(bitVector, x);
+            }
+            return bitVector;
+        }
+
+
+        #endregion
+
+        #region toggle
+        private int toggle(int bitVector, int index)
+        {
+            if (index < 0) return bitVector;
+            int mask = 1 << index;
+            if (((bitVector & mask)) == 0)
+            {
+                bitVector |= mask;
+            }
+            else { bitVector &= ~mask; }
+            return bitVector;
+        }
+        #endregion
+
+        #region checkExactlyOneBitSet
+        Boolean checkExactlyOneBitSet(int bitVector)
+        {
+            return (bitVector & (bitVector - 1)) == 0;
+        }
+        #endregion
+
+        #region CheckMaxOneOdd
         /// <summary>
         /// Checks for more than one odd number
         /// </summary>
@@ -40,7 +87,7 @@ namespace InterviewSolutions
             {
                 if (table[count] % 2 == 1)
                 {
-                    if(foundOdd)
+                    if (foundOdd)
                     {
                         return false;
                     }
@@ -49,6 +96,9 @@ namespace InterviewSolutions
             }
             return true;
         }
+        #endregion
+
+        #region getCharNumbers
         /// <summary>
         /// Maps each character to a Number.  a --> 0, b-->1, C -->2, etc.,
         /// This is case insensitive. Non- letter characters map to -1.
@@ -66,20 +116,24 @@ namespace InterviewSolutions
             }
             return -1;
         }
+        #endregion
 
+        #region buildCharFrequencyTable
         private int[] buildCharFrequencyTable(string phrase)
         {
             int[] table = new int[Convert.ToInt32('z') - Convert.ToInt32('a') + 1];
             foreach (char c in phrase.ToCharArray())
             {
                 int x = getCharNumbers(c);
-                if(x!=-1)
+                if (x != -1)
                 {
                     table[x]++;
                 }
             }
             return table;
         }
+
+        #endregion
 
     }
 }
