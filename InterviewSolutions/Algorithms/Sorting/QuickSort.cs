@@ -13,32 +13,29 @@ namespace InterviewSolutions.Algorithms.Sorting
 
         }
 
-
-        #region "SortArray"
+        #region SortArray
         public int[] SortArray(int[] arr, int left, int right)
         {
             try
             {
-                if (arr != null && arr.Length > 0)
-                {
+                int pIndex = Partition(arr, left, right);
+                // Sort Left Array
+                if (left < pIndex - 1)
+                    SortArray(arr, left, pIndex - 1);
+                if (pIndex < right)
+                    // Sort right Array
+                    SortArray(arr, pIndex, right);
 
-                    int pIndex = Partition(arr, left, right);
-                    // Sort Left Array
-                    if (left < pIndex - 1)
-                         SortArray(arr, left, pIndex - 1);
-                    if (pIndex < right)
-                        // Sort right Array
-                        SortArray(arr, pIndex, right);
-
-                }
             }
             catch (Exception ex)
             {
+                throw ex;
             }
             return arr;
         }
         #endregion
 
+        #region Partition
         private int Partition(int[] arr, int left, int right)
         {
             int pivot = arr[(left + right) / 2];
@@ -60,6 +57,9 @@ namespace InterviewSolutions.Algorithms.Sorting
             }
             return left;
         }
+
+        #endregion
+
 
     }
 }
