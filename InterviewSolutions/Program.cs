@@ -16,9 +16,11 @@ namespace InterviewSolutions
         {
 
             QuickSort qs = new QuickSort();
+            MergeSort ms = new MergeSort();
             int[] a = new int[] {5,1,7,2,6,4,8,3 };
 
-            int[] result= qs.SortArray(a, 0, a.Length - 1);
+            //int[] result= qs.SortArray(a, 0, a.Length - 1);
+            ms.Sort(a, 0, a.Length - 1);
             //int[] a = new int[] { 1, 2, 4, 3, 4, 5 };
             //int[] rotate = new int[] { 0, 2, 3 };
             //int[] results = getMaxElementIndices(a, rotate);
