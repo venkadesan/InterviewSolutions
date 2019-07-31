@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using InterviewSolutions.DataStructure;
-using InterviewSolutions.Tree;
 using InterviewSolutions.Algorithms;
 using InterviewSolutions.Algorithms.Sorting;
 
@@ -85,26 +84,25 @@ namespace InterviewSolutions
         private static void Tree()
         {
             int[] binaryTree = new int[] { 5, 6, 11, 4, 7 };
-            InterviewSolutions.Tree.Node root = null;
+            Tree tree = new Tree();
             // inserting value;
             Console.WriteLine("Building binary search Tree");
             foreach (int value in binaryTree)
             {
-                if (root == null)
+                if (tree.root == null)
                 {
                     Console.WriteLine("Initializing the root node with value: {0}", value.ToString());
-                    root = new InterviewSolutions.Tree.Node(value);
+                    tree.root= new Node(value);
                 }
                 else
                 {
                     Console.WriteLine("Inserting Node {0}", value.ToString());
-                    root = root.Insert(ref root, value);
+                    tree.Insert(ref tree.root, value);
                 }
             }
             Console.WriteLine("Enter value to be deleted");
             int valueToBeDeleted = Convert.ToInt16(Console.ReadLine());
-            //root = root.Delete(ref root, valueToBeDeleted);
-
+            
         }
 
         private static int[] getMaxElementIndices(int[] a, int[] rotate)

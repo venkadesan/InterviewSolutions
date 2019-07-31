@@ -45,15 +45,18 @@
   <ItemGroup>
     <Compile Include="Algorithms\Sorting\MergeSort.cs" />
     <Compile Include="Algorithms\Sorting\QuickSort.cs" />
+    <Compile Include="DataStructure\Tree.cs" />
     <Compile Include="StringProblems\CompressString.cs" />
     <Compile Include="StringProblems\OneAway.cs" />
     <Compile Include="StringProblems\Palindrome.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tree\Tree.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Tree\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
