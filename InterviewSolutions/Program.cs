@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using InterviewSolutions.DataStructure;
 using InterviewSolutions.Tree;
 using InterviewSolutions.Algorithms;
 using InterviewSolutions.Algorithms.Sorting;
@@ -15,12 +16,31 @@ namespace InterviewSolutions
         static void Main(string[] args)
         {
 
-            QuickSort qs = new QuickSort();
-            MergeSort ms = new MergeSort();
-            int[] a = new int[] {5,1,7,2,6,4,8,3 };
+            //QuickSort qs = new QuickSort();
+            //MergeSort ms = new MergeSort();
+            //int[] a = new int[] {5,1,7,2,6,4,8,3 };
+
+            InterviewSolutions.DataStructure.Tree tree = new InterviewSolutions.DataStructure.Tree();
+            tree.root = new InterviewSolutions.DataStructure.Node(1);
+            tree.root.left = new InterviewSolutions.DataStructure.Node(2);
+            tree.root.right = new InterviewSolutions.DataStructure.Node(3);
+            tree.root.left.left = new InterviewSolutions.DataStructure.Node(4);
+            tree.root.left.right = new InterviewSolutions.DataStructure.Node(5);
+
+            Console.WriteLine("Preorder traversal " +
+                               "of binary tree is ");
+            tree.PreOrderTraversal(tree.root);
+
+            Console.WriteLine("\nInorder traversal " +
+                                "of binary tree is ");
+            tree.InOrderTraversal(tree.root);
+
+            Console.WriteLine("\nPostorder traversal " +
+                                  "of binary tree is ");
+            tree.PostOrderTraversal(tree.root);
 
             //int[] result= qs.SortArray(a, 0, a.Length - 1);
-            ms.Sort(a, 0, a.Length - 1);
+            //ms.Sort(a, 0, a.Length - 1);
             //int[] a = new int[] { 1, 2, 4, 3, 4, 5 };
             //int[] rotate = new int[] { 0, 2, 3 };
             //int[] results = getMaxElementIndices(a, rotate);
@@ -65,7 +85,7 @@ namespace InterviewSolutions
         private static void Tree()
         {
             int[] binaryTree = new int[] { 5, 6, 11, 4, 7 };
-            Node root = null;
+            InterviewSolutions.Tree.Node root = null;
             // inserting value;
             Console.WriteLine("Building binary search Tree");
             foreach (int value in binaryTree)
@@ -73,7 +93,7 @@ namespace InterviewSolutions
                 if (root == null)
                 {
                     Console.WriteLine("Initializing the root node with value: {0}", value.ToString());
-                    root = new Node(value);
+                    root = new InterviewSolutions.Tree.Node(value);
                 }
                 else
                 {
