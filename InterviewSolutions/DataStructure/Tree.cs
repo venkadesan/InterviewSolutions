@@ -7,10 +7,12 @@ using System.Threading.Tasks;
 namespace InterviewSolutions.DataStructure
 {
 
-    #region "Tree"
+    #region Tree
     public class Tree
     {
-        public Node root; 
+        public Node root;
+
+        #region InOrderTraversal
         public void InOrderTraversal(Node root)
         {
             if (root != null)
@@ -20,7 +22,10 @@ namespace InterviewSolutions.DataStructure
                 InOrderTraversal(root.right);
             }
         }
+        #endregion
 
+
+        #region PreOrderTraversal
         public void PreOrderTraversal(Node root)
         {
             if (root != null)
@@ -31,6 +36,10 @@ namespace InterviewSolutions.DataStructure
             }
         }
 
+        #endregion
+
+
+        #region PostOrderTraversal
         public void PostOrderTraversal(Node root)
         {
             if (root != null)
@@ -41,6 +50,10 @@ namespace InterviewSolutions.DataStructure
             }
         }
 
+        #endregion
+
+
+        #region InserstNode
         /// <summary>
         /// Insert a value to binary search tree
         /// </summary>
@@ -68,12 +81,16 @@ namespace InterviewSolutions.DataStructure
             return root;
         }
 
+        #endregion
+
+
+        #region Delete
         /// <summary>
         /// Deletes the value from binary serach tree
         /// </summary>
         /// <param name="root">Root node</param>
         /// <param name="value">Value to be inserted</param>
-        /// <returns>Root Node</returns>
+        /// <returns>Root LinkedListNode</returns>
         public Node Delete(ref Node root, int value)
         {
 
@@ -103,7 +120,10 @@ namespace InterviewSolutions.DataStructure
             }
             return root;
         }
+        #endregion
 
+
+        #region FindMinValue
         public int FindMinValue(Node root)
         {
             Node currentNode = root;
@@ -117,16 +137,17 @@ namespace InterviewSolutions.DataStructure
 
         }
 
+        #endregion
+
+
+        #region ReplaceNodeInParent
         public void ReplaceNodeInParent(ref Node root, int newValue = 0)
         {
 
         }
-
-
-
+        #endregion
 
     }
-
     #endregion
 
     #region Node

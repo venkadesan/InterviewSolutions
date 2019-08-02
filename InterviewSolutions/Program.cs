@@ -15,36 +15,53 @@ namespace InterviewSolutions
         static void Main(string[] args)
         {
 
-            //QuickSort qs = new QuickSort();
-            //MergeSort ms = new MergeSort();
+
+            // Sorting Algorithms
             //int[] a = new int[] {5,1,7,2,6,4,8,3 };
 
-            InterviewSolutions.DataStructure.Tree tree = new InterviewSolutions.DataStructure.Tree();
-            tree.root = new InterviewSolutions.DataStructure.Node(1);
-            tree.root.left = new InterviewSolutions.DataStructure.Node(2);
-            tree.root.right = new InterviewSolutions.DataStructure.Node(3);
-            tree.root.left.left = new InterviewSolutions.DataStructure.Node(4);
-            tree.root.left.right = new InterviewSolutions.DataStructure.Node(5);
+            //QuickSort qs = new QuickSort();
+            //MergeSort ms = new MergeSort();
 
-            Console.WriteLine("Preorder traversal " +
-                               "of binary tree is ");
-            tree.PreOrderTraversal(tree.root);
-
-            Console.WriteLine("\nInorder traversal " +
-                                "of binary tree is ");
-            tree.InOrderTraversal(tree.root);
-
-            Console.WriteLine("\nPostorder traversal " +
-                                  "of binary tree is ");
-            tree.PostOrderTraversal(tree.root);
-
-            //int[] result= qs.SortArray(a, 0, a.Length - 1);
             //ms.Sort(a, 0, a.Length - 1);
+            //int[] result= qs.SortArray(a, 0, a.Length - 1);
+
+
+
+            // Tree Problem
+            //InterviewSolutions.DataStructure.Tree tree = new InterviewSolutions.DataStructure.Tree();
+            //tree.root = new InterviewSolutions.DataStructure.Node(1);
+            //tree.root.left = new InterviewSolutions.DataStructure.Node(2);
+            //tree.root.right = new InterviewSolutions.DataStructure.Node(3);
+            //tree.root.left.left = new InterviewSolutions.DataStructure.Node(4);
+            //tree.root.left.right = new InterviewSolutions.DataStructure.Node(5);
+
+            //Console.WriteLine("Preorder traversal " +
+            //                   "of binary tree is ");
+            //tree.PreOrderTraversal(tree.root);
+
+            //Console.WriteLine("\nInorder traversal " +
+            //                    "of binary tree is ");
+            //tree.InOrderTraversal(tree.root);
+
+            //Console.WriteLine("\nPostorder traversal " +
+            //                      "of binary tree is ");
+            //tree.PostOrderTraversal(tree.root);
+
+
             //int[] a = new int[] { 1, 2, 4, 3, 4, 5 };
             //int[] rotate = new int[] { 0, 2, 3 };
             //int[] results = getMaxElementIndices(a, rotate);
 
 
+            // Linked List
+
+            LinkedList ll = new LinkedList();
+            int[] numbers = new int[] { 1, 2, 4, 3, 4, 5 };
+            foreach(int num in numbers)
+            {
+                if (ll.head == null) ll.head = new LinkedListNode(num);
+                else ll.head.AppendNodeToTail(num);
+            }
 
             //int maxPosition = 10;
             //int[] start = new int[] { 3, 8 };
@@ -92,17 +109,17 @@ namespace InterviewSolutions
                 if (tree.root == null)
                 {
                     Console.WriteLine("Initializing the root node with value: {0}", value.ToString());
-                    tree.root= new Node(value);
+                    tree.root = new Node(value);
                 }
                 else
                 {
-                    Console.WriteLine("Inserting Node {0}", value.ToString());
+                    Console.WriteLine("Inserting LinkedListNode {0}", value.ToString());
                     tree.Insert(ref tree.root, value);
                 }
             }
             Console.WriteLine("Enter value to be deleted");
             int valueToBeDeleted = Convert.ToInt16(Console.ReadLine());
-            
+
         }
 
         private static int[] getMaxElementIndices(int[] a, int[] rotate)
@@ -139,7 +156,7 @@ namespace InterviewSolutions
             return rotatedResults.ToArray();
         }
 
-                
+
         private static int widestGap(int n, int[] start, int[] end)
         {
             int gap = 0;
