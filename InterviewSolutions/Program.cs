@@ -55,13 +55,13 @@ namespace InterviewSolutions
 
             // Linked List
 
-            LinkedList ll = new LinkedList();
-            int[] numbers = new int[] { 1, 2, 4, 3, 4, 5 };
-            foreach(int num in numbers)
-            {
-                if (ll.head == null) ll.head = new LinkedListNode(num);
-                else ll.head.AppendNodeToTail(num);
-            }
+            //LinkedList ll = new LinkedList();
+            //int[] numbers = new int[] { 1, 2, 4, 3, 4, 5 };
+            //foreach(int num in numbers)
+            //{
+            //    if (ll.head == null) ll.head = new LinkedListNode(num);
+            //    else ll.head.AppendNodeToTail(num);
+            //}
 
             //int maxPosition = 10;
             //int[] start = new int[] { 3, 8 };
@@ -92,6 +92,33 @@ namespace InterviewSolutions
             //}
             //else
             //    Console.Write("Both Strings are Not one Edit Away");
+
+            StackProblems.FixedMultiStack multiStack = new StackProblems.FixedMultiStack(3);
+            // Inserting into first stack
+            multiStack.push(0, 1);
+            multiStack.push(0, 2);
+            multiStack.push(0, 3);
+            // Inserting into second stack
+            multiStack.push(1, 4);
+            multiStack.push(1, 5);
+            multiStack.push(1, 6);
+            // Inserting into third stack
+            multiStack.push(2, 7);
+            multiStack.push(2, 8);
+            multiStack.push(2, 9);
+
+            Console.WriteLine( multiStack.Pop(0).ToString());
+            Console.WriteLine(multiStack.Pop(0).ToString());
+            Console.WriteLine(multiStack.Pop(0).ToString());
+
+            Console.WriteLine(multiStack.Pop(1).ToString());
+            Console.WriteLine(multiStack.Pop(1).ToString());
+            Console.WriteLine(multiStack.Pop(1).ToString());
+
+            Console.WriteLine(multiStack.Pop(2).ToString());
+            Console.WriteLine(multiStack.Pop(2).ToString());
+            Console.WriteLine(multiStack.Pop(2).ToString());
+
 
 
 
