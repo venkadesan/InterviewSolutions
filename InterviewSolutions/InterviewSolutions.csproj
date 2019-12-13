@@ -47,6 +47,7 @@
     <Compile Include="Algorithms\Sorting\QuickSort.cs" />
     <Compile Include="DataStructure\LinkedList.cs" />
     <Compile Include="DataStructure\Tree.cs" />
+    <Compile Include="StackProblems\Stack.cs" />
     <Compile Include="StringProblems\CompressString.cs" />
     <Compile Include="StringProblems\OneAway.cs" />
     <Compile Include="StringProblems\Palindrome.cs" />
