@@ -1,4 +1,5 @@
-﻿using System;
+﻿#region "NameSpace"
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,6 +7,10 @@ using System.Threading.Tasks;
 using InterviewSolutions.DataStructure;
 using InterviewSolutions.Algorithms;
 using InterviewSolutions.Algorithms.Sorting;
+using InterviewSolutions.OOP;
+#endregion
+
+
 
 
 namespace InterviewSolutions
@@ -15,6 +20,16 @@ namespace InterviewSolutions
         static void Main(string[] args)
         {
 
+
+            //List<Person> lstOfPersons = new List<Person>();
+
+            //Person person = new Person();
+            //person.FirstName = "test";
+            //lstOfPersons.Add(person);
+
+            //Student student = new Student();
+            //student.Grade = "10";
+            //lstOfPersons.Add(student);
 
             // Sorting Algorithms
             //int[] a = new int[] {5,1,7,2,6,4,8,3 };
@@ -109,7 +124,7 @@ namespace InterviewSolutions
             multiStack.push(2, 8);
             multiStack.push(2, 9);
 
-            Console.WriteLine( multiStack.Pop(0).ToString());
+            Console.WriteLine(multiStack.Pop(0).ToString());
             Console.WriteLine(multiStack.Pop(0).ToString());
             Console.WriteLine(multiStack.Pop(0).ToString());
 
