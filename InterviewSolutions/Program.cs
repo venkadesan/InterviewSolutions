@@ -1,4 +1,4 @@
-﻿#region "NameSpace"
+﻿#region NameSpace
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +9,6 @@ using InterviewSolutions.Algorithms;
 using InterviewSolutions.Algorithms.Sorting;
 using InterviewSolutions.OOP;
 #endregion
-
-
 
 
 namespace InterviewSolutions

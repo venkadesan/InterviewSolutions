@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Algorithms\Sorting\MergeSort.cs" />
     <Compile Include="Algorithms\Sorting\QuickSort.cs" />
+    <Compile Include="DataStructure\Graph.cs" />
     <Compile Include="DataStructure\LinkedList.cs" />
     <Compile Include="DataStructure\Tree.cs" />
     <Compile Include="OOP\Person.cs" />
