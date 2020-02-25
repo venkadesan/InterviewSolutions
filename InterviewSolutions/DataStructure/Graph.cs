@@ -9,12 +9,12 @@ namespace InterviewSolutions.DataStructure
 {
     public class Graph
     {
-        public GraphNode[] nodes { get; set; }
+        public List<GraphNode> nodes { get; set; }
 
         public void DFS(GraphNode root)
         {
             if (root == null) return;
-             Visit(root);
+            Visit(root);
             root.visited = true;
             foreach (GraphNode node in root.Neighbors)
             {
@@ -26,16 +26,38 @@ namespace InterviewSolutions.DataStructure
 
         }
 
+        
         private void Visit(GraphNode node)
         {
             Console.WriteLine(node.Name);
+        }
+
+        public Graph buildGraph(List<GraphNode> graphNodes)
+        {
+            Graph g = new Graph();
+            try
+            {
+                g.nodes = graphNodes;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return g;
         }
     }
     public class GraphNode
     {
         public string Name { get; set; }
-        public GraphNode[] Neighbors { get; set; }
+        public List<GraphNode> Neighbors { get; set; }
         public bool visited { get; set; }
+
+        public bool AddEdges(List<GraphNode> nodes)
+        {
+            Neighbors = nodes;
+            return true;
+        }
     }
 }
 
