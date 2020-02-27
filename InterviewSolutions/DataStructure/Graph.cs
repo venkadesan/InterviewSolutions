@@ -9,7 +9,12 @@ namespace InterviewSolutions.DataStructure
 {
     public class Graph
     {
-        public List<GraphNode> nodes { get; set; }
+        public List<GraphNode> _nodes { get; set; }
+
+        public Graph(List<GraphNode> nodes)
+        {
+            _nodes = new List<GraphNode>();
+        }
 
         public void DFS(GraphNode root)
         {
@@ -23,41 +28,39 @@ namespace InterviewSolutions.DataStructure
                     DFS(node);
                 }
             }
-
         }
 
-        
+
         private void Visit(GraphNode node)
         {
             Console.WriteLine(node.Name);
         }
 
-        public Graph buildGraph(List<GraphNode> graphNodes)
+        public void Add_Vertex(Graph G, GraphNode source, GraphNode des)
         {
-            Graph g = new Graph();
-            try
-            {
-                g.nodes = graphNodes;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            if (source != null && !G._nodes.Contains(source))
+                G._nodes.Add(source);
 
-            return g;
+            if (des != null && !G._nodes.Contains(des))
+                G._nodes.Add(des);
+
+            if (source.Neighbors == null)
+            {
+                source.Neighbors = new List<GraphNode>();
+                source.Neighbors.Add(des);
+            }
+            else if (!source.Neighbors.Contains(des))
+                source.Neighbors.Add(des);
         }
+
     }
     public class GraphNode
     {
         public string Name { get; set; }
+
+
         public List<GraphNode> Neighbors { get; set; }
         public bool visited { get; set; }
-
-        public bool AddEdges(List<GraphNode> nodes)
-        {
-            Neighbors = nodes;
-            return true;
-        }
     }
 }
 
