@@ -11,53 +11,62 @@ namespace InterviewSolutions.DataStructure
     {
         public List<GraphNode> _nodes { get; set; }
 
+        #region constructor
         public Graph(List<GraphNode> nodes)
         {
-            _nodes = new List<GraphNode>();
+            _nodes = nodes;
         }
 
+        #endregion
+
+
+        #region Public Method
         public void DFS(GraphNode root)
         {
             if (root == null) return;
             Visit(root);
             root.visited = true;
-            foreach (GraphNode node in root.Neighbors)
+            if (root.Neighbors != null)
             {
-                if (!node.visited)
+                foreach (GraphNode node in root.Neighbors)
                 {
-                    DFS(node);
+                    if (!node.visited)
+                    {
+                        DFS(node);
+                    }
                 }
             }
         }
 
+        public void Add_Vertex(GraphNode source, GraphNode destination)
+        {
+            if (source.Neighbors == null) source.Neighbors = new List<GraphNode>();
+            if (!source.Neighbors.Contains(destination)) source.Neighbors.Add(destination);
+        }
 
+        #endregion
+
+
+
+        #region private methods
         private void Visit(GraphNode node)
         {
             Console.WriteLine(node.Name);
         }
 
-        public void Add_Vertex(Graph G, GraphNode source, GraphNode des)
-        {
-            if (source != null && !G._nodes.Contains(source))
-                G._nodes.Add(source);
+        #endregion
 
-            if (des != null && !G._nodes.Contains(des))
-                G._nodes.Add(des);
 
-            if (source.Neighbors == null)
-            {
-                source.Neighbors = new List<GraphNode>();
-                source.Neighbors.Add(des);
-            }
-            else if (!source.Neighbors.Contains(des))
-                source.Neighbors.Add(des);
-        }
 
     }
     public class GraphNode
     {
         public string Name { get; set; }
 
+        public GraphNode(string _name)
+        {
+            Name = _name;
+        }
 
         public List<GraphNode> Neighbors { get; set; }
         public bool visited { get; set; }
