@@ -152,7 +152,7 @@ namespace InterviewSolutions
             G.Add_Vertex(node0, node1);
             G.Add_Vertex(node0, node4);
             G.Add_Vertex(node0, node5);
-            
+
             G.Add_Vertex(node1, node3);
             G.Add_Vertex(node1, node4);
 
@@ -161,7 +161,17 @@ namespace InterviewSolutions
             G.Add_Vertex(node3, node4);
 
             G.Add_Vertex(node2, node1);
-            G.DFS(node0);
+            //G.DFS(node0);
+            var source = node0;
+            var dest = node2;
+            if (G.IsRouteExists(G, source, dest))
+            {
+                Console.WriteLine($"{source.Name} Route Exists {dest.Name}");
+            }
+            else
+            {
+                Console.WriteLine($"{source.Name} Route Not Exists {dest.Name}");
+            }
 
         }
 
