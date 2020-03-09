@@ -10,10 +10,10 @@ namespace InterviewSolutions.DataStructure
     #region Tree
     public class Tree
     {
-        public Node root;
+        public TreeNode root;
 
         #region InOrderTraversal
-        public void InOrderTraversal(Node root)
+        public void InOrderTraversal(TreeNode root)
         {
             if (root != null)
             {
@@ -26,7 +26,7 @@ namespace InterviewSolutions.DataStructure
 
 
         #region PreOrderTraversal
-        public void PreOrderTraversal(Node root)
+        public void PreOrderTraversal(TreeNode root)
         {
             if (root != null)
             {
@@ -40,7 +40,7 @@ namespace InterviewSolutions.DataStructure
 
 
         #region PostOrderTraversal
-        public void PostOrderTraversal(Node root)
+        public void PostOrderTraversal(TreeNode root)
         {
             if (root != null)
             {
@@ -60,11 +60,11 @@ namespace InterviewSolutions.DataStructure
         /// <param name="root"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        public Node Insert(ref Node root, int value)
+        public TreeNode Insert(ref TreeNode root, int value)
         {
             if (root == null)
             {
-                root = new Node(value);
+                root = new TreeNode(value);
             }
             else if (root.data == value)
             {
@@ -91,13 +91,13 @@ namespace InterviewSolutions.DataStructure
         /// <param name="root">Root node</param>
         /// <param name="value">Value to be inserted</param>
         /// <returns>Root LinkedListNode</returns>
-        public Node Delete(ref Node root, int value)
+        public TreeNode Delete(ref TreeNode root, int value)
         {
 
             if (root == null)
                 return root;
-            Node _nodeTobeDeleted = root;
-            Node parentNode = null;
+            TreeNode _nodeTobeDeleted = root;
+            TreeNode parentNode = null;
             while (_nodeTobeDeleted.data != value)
             {
                 // if the value is greater than the value, it is in left side of the tree
@@ -124,9 +124,9 @@ namespace InterviewSolutions.DataStructure
 
 
         #region FindMinValue
-        public int FindMinValue(Node root)
+        public int FindMinValue(TreeNode root)
         {
-            Node currentNode = root;
+            TreeNode currentNode = root;
             int minValue = 0;
             while (currentNode.left != null)
             {
@@ -141,7 +141,7 @@ namespace InterviewSolutions.DataStructure
 
 
         #region ReplaceNodeInParent
-        public void ReplaceNodeInParent(ref Node root, int newValue = 0)
+        public void ReplaceNodeInParent(ref TreeNode root, int newValue = 0)
         {
 
         }
@@ -151,12 +151,12 @@ namespace InterviewSolutions.DataStructure
     #endregion
 
     #region Node
-    public class Node
+    public class TreeNode
     {
         public int data;
-        public Node left;
-        public Node right;
-        public Node(int item)
+        public TreeNode left;
+        public TreeNode right;
+        public TreeNode(int item)
         {
             data = item;
         }
