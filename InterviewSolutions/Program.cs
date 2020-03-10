@@ -41,14 +41,17 @@ namespace InterviewSolutions
 
 
 
-            // Tree Problem
-            //InterviewSolutions.DataStructure.Tree tree = new InterviewSolutions.DataStructure.Tree();
-            //tree.root = new InterviewSolutions.DataStructure.Node(1);
-            //tree.root.left = new InterviewSolutions.DataStructure.Node(2);
-            //tree.root.right = new InterviewSolutions.DataStructure.Node(3);
-            //tree.root.left.left = new InterviewSolutions.DataStructure.Node(4);
-            //tree.root.left.right = new InterviewSolutions.DataStructure.Node(5);
+            // Tree Construction.
+            //Tree tree = new Tree();
+            //tree.root = new TreeNode(1);
+            //tree.root.left = new TreeNode(2);
+            //tree.root.right = new TreeNode(3);
+            //tree.root.left.left = new TreeNode(4);
+            //tree.root.left.right = new TreeNode(5);
 
+            //var lists = tree.CreateLevelLinkedListIterative(tree.root);
+
+            
             List<int> arry = new List<int>() { 1, 2, 3, 4, 5, 6, 7 };
             TreeNode node = MinimalTree.CreateMinimalBST(arry.ToArray());
 

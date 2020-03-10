@@ -11,16 +11,13 @@ namespace InterviewSolutions.TreeProblems
 {
     public class MinimalTree
     {
-
-
         #region public methods
         public static TreeNode CreateMinimalBST(int[] arr)
         {
-            return CreateMinimalBST(arr, 0, arr.Length-1);
+            return CreateMinimalBST(arr, 0, arr.Length - 1);
         }
 
         #endregion
-
 
         #region private method
         private static TreeNode CreateMinimalBST(int[] arr, int start, int end)
