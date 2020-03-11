@@ -42,18 +42,23 @@ namespace InterviewSolutions
 
 
             // Tree Construction.
-            //Tree tree = new Tree();
-            //tree.root = new TreeNode(1);
-            //tree.root.left = new TreeNode(2);
-            //tree.root.right = new TreeNode(3);
-            //tree.root.left.left = new TreeNode(4);
-            //tree.root.left.right = new TreeNode(5);
+            Tree tree = new Tree();
+            tree.root = new TreeNode(1);
+            tree.root.left = new TreeNode(2);
+            tree.root.right = new TreeNode(3);
+            tree.root.left.left = new TreeNode(4);
+            tree.root.left.right = new TreeNode(5);
+            var isBalanced = tree.IsBalanced(tree.root);
+            Console.WriteLine($"Tree Balanced: {isBalanced.ToString()}");
 
             //var lists = tree.CreateLevelLinkedListIterative(tree.root);
 
-            
+
             List<int> arry = new List<int>() { 1, 2, 3, 4, 5, 6, 7 };
             TreeNode node = MinimalTree.CreateMinimalBST(arry.ToArray());
+            //Tree tree = new Tree();
+            tree.IsBalanced(node);
+
 
             Console.WriteLine(node.data);
             //Console.WriteLine("Preorder traversal " +

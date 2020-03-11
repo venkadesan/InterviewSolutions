@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.NetworkInformation;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -200,6 +201,34 @@ namespace InterviewSolutions.DataStructure
 
         }
 
+        #endregion
+
+
+        #region CheckBalanced
+        /// <summary>
+        /// Checks if the tree is balanced tree or not.
+        /// </summary>
+        /// <param name="root">tree root</param>
+        /// <returns>true or false based on sub trees</returns>
+        public bool IsBalanced(TreeNode root)
+        {
+            return (checkHeight(root) != Int32.MinValue);
+        }
+
+        private int checkHeight(TreeNode root)
+        {
+            if (root == null) return -1;
+            int leftHeight = checkHeight(root.left);
+            if (leftHeight == Int32.MinValue) return Int32.MinValue;
+            int rightHeight = checkHeight(root.right);
+            if (rightHeight == Int32.MinValue) return Int32.MinValue;
+            int heightDiff = leftHeight - rightHeight;
+            if (Math.Abs(heightDiff) > 1)
+            {
+                return Int32.MinValue;
+            }
+            else return Math.Max(leftHeight, rightHeight) + 1;
+        }
         #endregion
 
 
