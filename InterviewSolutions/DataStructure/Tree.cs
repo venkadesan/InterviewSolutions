@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Runtime.Remoting.Metadata.W3cXsd2001;
@@ -14,6 +15,8 @@ namespace InterviewSolutions.DataStructure
     public class Tree
     {
         public TreeNode root;
+
+        #region Traversals
 
         #region InOrderTraversal
         public void InOrderTraversal(TreeNode root)
@@ -55,6 +58,7 @@ namespace InterviewSolutions.DataStructure
 
         #endregion
 
+        #endregion
 
         #region InserstNode
         /// <summary>
@@ -85,7 +89,6 @@ namespace InterviewSolutions.DataStructure
         }
 
         #endregion
-
 
         #region Delete
         /// <summary>
@@ -125,7 +128,6 @@ namespace InterviewSolutions.DataStructure
         }
         #endregion
 
-
         #region FindMinValue
         public int FindMinValue(TreeNode root)
         {
@@ -142,14 +144,12 @@ namespace InterviewSolutions.DataStructure
 
         #endregion
 
-
         #region ReplaceNodeInParent
         public void ReplaceNodeInParent(ref TreeNode root, int newValue = 0)
         {
 
         }
         #endregion
-
 
         #region CreateLevelLinkedLists
         public List<LinkedList<TreeNode>> CreateLevelLinkedList(TreeNode node)
@@ -203,8 +203,7 @@ namespace InterviewSolutions.DataStructure
 
         #endregion
 
-
-        #region CheckBalanced
+        #region IsBalanced
         /// <summary>
         /// Checks if the tree is balanced tree or not.
         /// </summary>
@@ -231,24 +230,43 @@ namespace InterviewSolutions.DataStructure
         }
         #endregion
 
-
-
-    }
-    #endregion
-
-    #region Node
-    public class TreeNode
-    {
-        public int data;
-        public TreeNode left;
-        public TreeNode right;
-        public TreeNode(int item)
+        public bool ValidateBST(TreeNode node)
         {
-            data = item;
+            return validateBST(node, 0, 0);
         }
 
+        private bool validateBST(TreeNode node, Int32 minVal, Int32 maxVal)
+        {
+            if (node == null) return true;
+            if ((minVal!=0 && node.data <= minVal) || (maxVal != 0 && node.data > maxVal))
+            {
+                return false;
+            }
+            if (!validateBST(node.left, minVal, node.data) || !validateBST(node.right, node.data, maxVal))
+            {
+                return false;
+            }
+            return true;
+        }
 
+    
+
+}
+#endregion
+
+#region Node
+public class TreeNode
+{
+    public int data;
+    public TreeNode left;
+    public TreeNode right;
+    public TreeNode(int item)
+    {
+        data = item;
     }
+
+
+}
     #endregion
 
 }

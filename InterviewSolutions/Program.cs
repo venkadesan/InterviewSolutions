@@ -50,6 +50,7 @@ namespace InterviewSolutions
             tree.root.left.right = new TreeNode(5);
             var isBalanced = tree.IsBalanced(tree.root);
             Console.WriteLine($"Tree Balanced: {isBalanced.ToString()}");
+            tree.ValidateBST(tree.root);
 
             //var lists = tree.CreateLevelLinkedListIterative(tree.root);
 
@@ -57,7 +58,8 @@ namespace InterviewSolutions
             List<int> arry = new List<int>() { 1, 2, 3, 4, 5, 6, 7 };
             TreeNode node = MinimalTree.CreateMinimalBST(arry.ToArray());
             //Tree tree = new Tree();
-            tree.IsBalanced(node);
+            //tree.IsBalanced(node);
+            tree.ValidateBST(node);
 
 
             Console.WriteLine(node.data);
