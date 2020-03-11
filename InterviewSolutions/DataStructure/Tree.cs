@@ -230,6 +230,7 @@ namespace InterviewSolutions.DataStructure
         }
         #endregion
 
+        #region ValidateBST
         public bool ValidateBST(TreeNode node)
         {
             return validateBST(node, 0, 0);
@@ -238,7 +239,7 @@ namespace InterviewSolutions.DataStructure
         private bool validateBST(TreeNode node, Int32 minVal, Int32 maxVal)
         {
             if (node == null) return true;
-            if ((minVal!=0 && node.data <= minVal) || (maxVal != 0 && node.data > maxVal))
+            if ((minVal != 0 && node.data <= minVal) || (maxVal != 0 && node.data > maxVal))
             {
                 return false;
             }
@@ -249,24 +250,67 @@ namespace InterviewSolutions.DataStructure
             return true;
         }
 
-    
+        #endregion
 
-}
-#endregion
 
-#region Node
-public class TreeNode
-{
-    public int data;
-    public TreeNode left;
-    public TreeNode right;
-    public TreeNode(int item)
-    {
-        data = item;
+        #region Successor
+        /// <summary>
+        ///  In Order Successor of Binary Search tree.
+        /// </summary>
+        /// <param name="n">Tree Node.</param>
+        /// <returns>Sucessor</returns>
+        public TreeNode InBSTOrderSuccessor(TreeNode n)
+        {
+            if (n == null) return null;
+            /* Found right children -> return leftmost node of right subtree. */
+            if (n.right != null)
+            {
+                return leftMostChild(n);
+            }
+            else
+            {
+                TreeNode q = n;
+                TreeNode x = q.parent; //assing with parent.
+                // Go up until we're on left instead of right.
+                while (x != null && x.left != q)
+                {
+                    q = x;
+                    x = x.parent;
+                }
+                return x;
+            }
+        }
+
+        TreeNode leftMostChild(TreeNode n)
+        {
+            if (n == null) return null;
+            while (n.left != null)
+            {
+                n = n.left;
+            }
+            return n;
+        }
+        #endregion
+
+
+
     }
+    #endregion
+
+    #region Node
+    public class TreeNode
+    {
+        public int data;
+        public TreeNode left;
+        public TreeNode right;
+        public TreeNode parent;
+        public TreeNode(int item)
+        {
+            data = item;
+        }
 
 
-}
+    }
     #endregion
 
 }

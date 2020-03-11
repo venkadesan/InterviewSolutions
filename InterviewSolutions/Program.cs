@@ -45,12 +45,18 @@ namespace InterviewSolutions
             Tree tree = new Tree();
             tree.root = new TreeNode(1);
             tree.root.left = new TreeNode(2);
+            tree.root.left.parent = tree.root;
             tree.root.right = new TreeNode(3);
+            tree.root.right.parent = tree.root;
             tree.root.left.left = new TreeNode(4);
+            tree.root.left.left.parent = tree.root.left;
             tree.root.left.right = new TreeNode(5);
+            tree.root.left.right.parent = tree.root.right;
             var isBalanced = tree.IsBalanced(tree.root);
             Console.WriteLine($"Tree Balanced: {isBalanced.ToString()}");
             tree.ValidateBST(tree.root);
+
+            
 
             //var lists = tree.CreateLevelLinkedListIterative(tree.root);
 
@@ -60,6 +66,8 @@ namespace InterviewSolutions
             //Tree tree = new Tree();
             //tree.IsBalanced(node);
             tree.ValidateBST(node);
+
+            TreeNode sucessor = tree.InBSTOrderSuccessor(node);
 
 
             Console.WriteLine(node.data);
