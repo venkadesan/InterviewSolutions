@@ -2,13 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using InterviewSolutions.DataStructure;
 using InterviewSolutions.Algorithms;
 using InterviewSolutions.Algorithms.Sorting;
 using InterviewSolutions.OOP;
 using InterviewSolutions.TreeProblems;
+using InterviewSolutions.LinkedListProblems;
 #endregion
 
 
@@ -42,35 +41,36 @@ namespace InterviewSolutions
 
 
             // Tree Construction.
-            Tree tree = new Tree();
-            tree.root = new TreeNode(1);
-            tree.root.left = new TreeNode(2);
-            tree.root.left.parent = tree.root;
-            tree.root.right = new TreeNode(3);
-            tree.root.right.parent = tree.root;
-            tree.root.left.left = new TreeNode(4);
-            tree.root.left.left.parent = tree.root.left;
-            tree.root.left.right = new TreeNode(5);
-            tree.root.left.right.parent = tree.root.right;
-            var isBalanced = tree.IsBalanced(tree.root);
-            Console.WriteLine($"Tree Balanced: {isBalanced.ToString()}");
-            tree.ValidateBST(tree.root);
+            //Tree tree = new Tree();
+            //tree.root = new TreeNode(1);
+            //tree.root.left = new TreeNode(2);
+            //tree.root.left.parent = tree.root;
+            //tree.root.right = new TreeNode(3);
+            //tree.root.right.parent = tree.root;
+            //tree.root.left.left = new TreeNode(4);
+            //tree.root.left.left.parent = tree.root.left;
+            //tree.root.left.right = new TreeNode(5);
+            //tree.root.left.right.parent = tree.root.right;
+            //var isBalanced = tree.IsBalanced(tree.root);
+            //Console.WriteLine($"Tree Balanced: {isBalanced.ToString()}");
+            //tree.ValidateBST(tree.root);
 
-            
+
+
 
             //var lists = tree.CreateLevelLinkedListIterative(tree.root);
 
 
-            List<int> arry = new List<int>() { 1, 2, 3, 4, 5, 6, 7 };
-            TreeNode node = MinimalTree.CreateMinimalBST(arry.ToArray());
-            //Tree tree = new Tree();
-            //tree.IsBalanced(node);
-            tree.ValidateBST(node);
+            //List<int> arry = new List<int>() { 1, 2, 3, 4, 5, 6, 7 };
+            //TreeNode node = MinimalTree.CreateMinimalBST(arry.ToArray());
+            ////Tree tree = new Tree();
+            ////tree.IsBalanced(node);
+            //tree.ValidateBST(node);
 
-            TreeNode sucessor = tree.InBSTOrderSuccessor(node);
+            //TreeNode sucessor = tree.InBSTOrderSuccessor(node);
 
 
-            Console.WriteLine(node.data);
+            //Console.WriteLine(node.data);
             //Console.WriteLine("Preorder traversal " +
             //                   "of binary tree is ");
             //tree.PreOrderTraversal(tree.root);
@@ -91,13 +91,15 @@ namespace InterviewSolutions
 
             // Linked List
 
-            //LinkedList ll = new LinkedList();
-            //int[] numbers = new int[] { 1, 2, 4, 3, 4, 5 };
-            //foreach(int num in numbers)
-            //{
-            //    if (ll.head == null) ll.head = new LinkedListNode(num);
-            //    else ll.head.AppendNodeToTail(num);
-            //}
+            LinkedList ll = new LinkedList();
+            int[] numbers = new int[] { 1, 2, 4, 3, 4, 5,3,3,2 };
+            foreach (int num in numbers)
+            {
+                if (ll.head == null) ll.head = new LinkedListNode(num);
+                else ll.head.AppendNodeToTail(num);
+            }
+            LinkedListSolution solution = new LinkedListSolution();
+            solution.RemoveDuplicates(ll.head);
 
             //int maxPosition = 10;
             //int[] start = new int[] { 3, 8 };
