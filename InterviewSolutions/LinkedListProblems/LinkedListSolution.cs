@@ -10,6 +10,7 @@ namespace InterviewSolutions.LinkedListProblems
     public class LinkedListSolution
     {
 
+        #region RemovingDuplicates
         public void RemoveDuplicates(LinkedListNode node)
         {
             HashSet<int> hashset = new HashSet<int>();
@@ -31,5 +32,28 @@ namespace InterviewSolutions.LinkedListProblems
                 }
             }
         }
+        public void RemoveDuplicatesRunnerTechnique(LinkedListNode head)
+        {
+            var current = head;
+            while (current != null)
+            {
+                var runner = current;
+                while (runner.Next != null)
+                {
+                    if (runner.Next.Data == current.Data)
+                    {
+                        runner.Next = runner.Next.Next;
+                    }
+                    else
+                    {
+                        runner = runner.Next;
+                    }
+                }
+                current = current.Next;
+            }
+
+        }
+        #endregion
+
     }
 }

@@ -99,7 +99,8 @@ namespace InterviewSolutions
                 else ll.head.AppendNodeToTail(num);
             }
             LinkedListSolution solution = new LinkedListSolution();
-            solution.RemoveDuplicates(ll.head);
+            //solution.RemoveDuplicates(ll.head);
+            solution.RemoveDuplicatesRunnerTechnique(ll.head);
 
             //int maxPosition = 10;
             //int[] start = new int[] { 3, 8 };
