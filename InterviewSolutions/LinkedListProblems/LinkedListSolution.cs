@@ -55,5 +55,31 @@ namespace InterviewSolutions.LinkedListProblems
         }
         #endregion
 
+        #region ReturnKthToLast
+        /// <summary>
+        ///  Return Kth to Last
+        /// </summary>
+        /// <param name="head">LinkedListNode head</param>
+        /// <param name="k">K th last</param>
+        /// <returns>last element</returns>
+        public LinkedListNode ReturnKthtoLast(LinkedListNode head, int k)
+        {
+            LinkedListNode p1 = head;
+            LinkedListNode p2 = head;
+            for (int i = 0; i < k; i++)
+            {
+                if (p1 == null) return null;
+                p1 = p1.Next;
+            }
+            while (p1 != null)
+            {
+                p1 = p1.Next;
+                p2 = p2.Next;
+            }
+
+            return p2;
+        }
+        #endregion
     }
 }
+

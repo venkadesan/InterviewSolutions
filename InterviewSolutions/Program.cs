@@ -92,7 +92,7 @@ namespace InterviewSolutions
             // Linked List
 
             LinkedList ll = new LinkedList();
-            int[] numbers = new int[] { 1, 2, 4, 3, 4, 5,3,3,2 };
+            int[] numbers = new int[] { 1, 2, 4, 3, 4, 5, 3, 3, 2 };
             foreach (int num in numbers)
             {
                 if (ll.head == null) ll.head = new LinkedListNode(num);
@@ -101,6 +101,8 @@ namespace InterviewSolutions
             LinkedListSolution solution = new LinkedListSolution();
             //solution.RemoveDuplicates(ll.head);
             solution.RemoveDuplicatesRunnerTechnique(ll.head);
+            int kthLast = 3;
+            var node = solution.ReturnKthtoLast(ll.head, kthLast);
 
             //int maxPosition = 10;
             //int[] start = new int[] { 3, 8 };
