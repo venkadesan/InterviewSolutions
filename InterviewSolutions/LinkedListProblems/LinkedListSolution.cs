@@ -80,6 +80,20 @@ namespace InterviewSolutions.LinkedListProblems
             return p2;
         }
         #endregion
+
+        #region DeleteMiddleNode
+        public bool DeleteMiddleNode(LinkedListNode node)
+        {
+            if (node == null || node.Next == null)
+            {
+                return false;
+            }
+            LinkedListNode next = node.Next;
+            node.Data = next.Data;
+            node.Next = next.Next;
+            return true;
+        }
+        #endregion
     }
 }
 
