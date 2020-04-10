@@ -82,7 +82,7 @@ namespace InterviewSolutions.LinkedListProblems
         #endregion
 
         #region DeleteMiddleNode
-        public bool DeleteMiddleNode(LinkedListNode node)
+        public bool DeleteNode(LinkedListNode node)
         {
             if (node == null || node.Next == null)
             {

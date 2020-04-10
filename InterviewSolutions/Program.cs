@@ -103,7 +103,7 @@ namespace InterviewSolutions
             solution.RemoveDuplicatesRunnerTechnique(ll.head);
             int kthLast = 3;
             var node = solution.ReturnKthtoLast(ll.head, kthLast);
-            solution.DeleteMiddleNode(ll.head.Next.Next.Next);
+            solution.DeleteNode(ll.head.Next.Next.Next);
 
             int maxPosition = 10;
             //int[] start = new int[] { 3, 8 };
