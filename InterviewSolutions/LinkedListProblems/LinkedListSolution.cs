@@ -94,6 +94,34 @@ namespace InterviewSolutions.LinkedListProblems
             return true;
         }
         #endregion
+
+
+        #region Partition
+        public LinkedListNode Partition(LinkedListNode node, int x)
+        {
+            LinkedListNode head = node;
+            LinkedListNode tail = node;
+            while (node != null)
+            {
+                LinkedListNode next = node.Next;
+                if (node.Data < x)
+                {
+                    /* Insert node at head. */
+                    node.Next = head;
+                    head = node;
+                }
+                else
+                {
+                    /* Insert node at tail. */
+                    tail.Next = node;
+                    tail = node;
+                }
+                node = next;
+            }
+            tail.Next = null;
+            return head;
+        }
+        #endregion
     }
 }
 
