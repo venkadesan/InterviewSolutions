@@ -110,7 +110,7 @@ namespace InterviewSolutions.LinkedListProblems
                     node.Next = head;
                     head = node;
                 }
-                else
+                else if (node.Data >= x)
                 {
                     /* Insert node at tail. */
                     tail.Next = node;
@@ -120,6 +120,40 @@ namespace InterviewSolutions.LinkedListProblems
             }
             tail.Next = null;
             return head;
+        }
+
+        public LinkedListNode Parition1(LinkedListNode node, int x)
+        {
+            LinkedListNode before_head = new LinkedListNode(0);
+            LinkedListNode before = before_head;
+            LinkedListNode after_head = new LinkedListNode(0);
+            LinkedListNode after = after_head;
+
+            while (node != null)
+            {
+                LinkedListNode next = node.Next;
+                // If the original list node is lesser than the given x,
+                // assign it to the before list.
+                if (node.Data < x)
+                {
+                    before.Next = node;
+                    before = before.Next;
+
+                }
+                else
+                {
+
+                    after.Next = node;
+                    after = after.Next;
+
+                }
+                // move ahead in the original list
+                node = next;
+            }
+            after.Next = null;
+            // Merging sorting
+            before.Next = after_head.Next;
+            return before_head.Next;
         }
         #endregion
     }

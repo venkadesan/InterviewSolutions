@@ -93,7 +93,8 @@ namespace InterviewSolutions
 
             LinkedList ll = new LinkedList();
             //int[] numbers = new int[] { 1, 2, 4, 3, 4, 5, 3, 3, 2 };
-            int[] numbers = new int[] { 3, 5, 8, 5, 10, 2, 1 };
+            int[] numbers = new int[] { 1, 4, 3, 2, 5, 2 };
+
             foreach (int num in numbers)
             {
                 if (ll.head == null) ll.head = new LinkedListNode(num);
@@ -105,8 +106,8 @@ namespace InterviewSolutions
             int kthLast = 3;
 
             var node = solution.ReturnKthtoLast(ll.head, kthLast);
-            int parition = 5;
-            node = solution.Partition(ll.head, parition);
+            int parition = 3;
+            node = solution.Parition1(ll.head, parition);
 
             int maxPosition = 10;
             //int[] start = new int[] { 3, 8 };
