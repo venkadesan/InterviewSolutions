@@ -91,25 +91,35 @@ namespace InterviewSolutions
 
             // Linked List
 
-            LinkedList ll = new LinkedList();
-            //int[] numbers = new int[] { 1, 2, 4, 3, 4, 5, 3, 3, 2 };
-            int[] numbers = new int[] { 1, 4, 3, 2, 5, 2 };
+            //LinkedList ll = new LinkedList();
+            ////int[] numbers = new int[] { 1, 2, 4, 3, 4, 5, 3, 3, 2 };
+            //int[] numbers = new int[] { 1, 4, 3, 2, 5, 2 };
 
-            foreach (int num in numbers)
-            {
-                if (ll.head == null) ll.head = new LinkedListNode(num);
-                else ll.head.AppendNodeToTail(num);
-            }
-            LinkedListSolution solution = new LinkedListSolution();
-            //solution.RemoveDuplicates(ll.head);
-            //solution.RemoveDuplicatesRunnerTechnique(ll.head);
-            int kthLast = 3;
+            //foreach (int num in numbers)
+            //{
+            //    if (ll.head == null) ll.head = new LinkedListNode(num);
+            //    else ll.head.AppendNodeToTail(num);
+            //}
+            //LinkedListSolution solution = new LinkedListSolution();
+            ////solution.RemoveDuplicates(ll.head);
+            ////solution.RemoveDuplicatesRunnerTechnique(ll.head);
+            //int kthLast = 3;
 
-            var node = solution.ReturnKthtoLast(ll.head, kthLast);
-            int parition = 3;
-            node = solution.Parition1(ll.head, parition);
+            //var node = solution.ReturnKthtoLast(ll.head, kthLast);
+            //int parition = 3;
+            //node = solution.Parition1(ll.head, parition);
 
-            int maxPosition = 10;
+            //int maxPosition = 10;
+
+            MyStack<int> myStack = new MyStack<int>();
+            myStack.push(10);
+            myStack.push(3);
+            myStack.push(8);
+            myStack.push(5);
+            myStack.push(11);
+            myStack.push(2);
+            StackProblems.StackSort stackSort = new StackProblems.StackSort();
+            stackSort.Sort(myStack);
             //int[] start = new int[] { 3, 8 };
             //int[] end = new int[] { 4, 9 };
             //int result = widestGap(maxPosition, start, end);
