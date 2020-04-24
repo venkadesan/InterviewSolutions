@@ -52,6 +52,7 @@
     <Compile Include="LinkedListProblems\LinkedListSolution.cs" />
     <Compile Include="OOP\Person.cs" />
     <Compile Include="OOP\Student.cs" />
+    <Compile Include="StackProblems\Animal.cs" />
     <Compile Include="StackProblems\FixedMultiStack.cs" />
     <Compile Include="StackProblems\StackSort.cs" />
     <Compile Include="StringProblems\CompressString.cs" />

@@ -7,6 +7,7 @@ using InterviewSolutions.Algorithms;
 using InterviewSolutions.Algorithms.Sorting;
 using InterviewSolutions.OOP;
 using InterviewSolutions.TreeProblems;
+using InterviewSolutions.StackProblems;
 using InterviewSolutions.LinkedListProblems;
 #endregion
 
@@ -18,17 +19,6 @@ namespace InterviewSolutions
         static void Main(string[] args)
         {
 
-
-            //List<Person> lstOfPersons = new List<Person>();
-
-            //Person person = new Person();
-            //person.FirstName = "test";
-            //lstOfPersons.Add(person);
-
-            //Student student = new Student();
-            //student.Grade = "10";
-            //lstOfPersons.Add(student);
-
             // Sorting Algorithms
             //int[] a = new int[] {5,1,7,2,6,4,8,3 };
 
@@ -37,9 +27,6 @@ namespace InterviewSolutions
 
             //ms.Sort(a, 0, a.Length - 1);
             //int[] result= qs.SortArray(a, 0, a.Length - 1);
-
-
-
             // Tree Construction.
             //Tree tree = new Tree();
             //tree.root = new TreeNode(1);
@@ -111,15 +98,17 @@ namespace InterviewSolutions
 
             //int maxPosition = 10;
 
-            MyStack<int> myStack = new MyStack<int>();
-            myStack.push(10);
-            myStack.push(3);
-            myStack.push(8);
-            myStack.push(5);
-            myStack.push(11);
-            myStack.push(2);
-            StackProblems.StackSort stackSort = new StackProblems.StackSort();
-            stackSort.Sort(myStack);
+            //MyStack<int> myStack = new MyStack<int>();
+            //myStack.push(10);
+            //myStack.push(3);
+            //myStack.push(8);
+            //myStack.push(5);
+            //myStack.push(11);
+            //myStack.push(2);
+            //StackProblems.StackSort stackSort = new StackProblems.StackSort();
+            //stackSort.Sort(myStack);
+
+
             //int[] start = new int[] { 3, 8 };
             //int[] end = new int[] { 4, 9 };
             //int result = widestGap(maxPosition, start, end);
@@ -155,6 +144,8 @@ namespace InterviewSolutions
             //multiStack.push(0, 2);
             //// Test  test cimmmit 
 
+
+
             //multiStack.push(0, 3);
             //// Inserting into second stack
             //multiStack.push(1, 4);
@@ -177,7 +168,21 @@ namespace InterviewSolutions
             //Console.WriteLine(multiStack.Pop(2).ToString());
             //Console.WriteLine(multiStack.Pop(2).ToString());
 
-            //List<GraphNode> nodes = new List<GraphNode>();
+
+            AnimalQueue queue = new AnimalQueue();
+            queue.EnQueue(new Dog("first Dog"));
+            queue.EnQueue(new Dog("Second dog"));
+            queue.EnQueue(new Cat("first Cat"));
+            queue.EnQueue(new Cat("Second Cat"));
+
+            var animal = queue.DeQueue();
+            while (animal != null)
+            {
+                Console.WriteLine($"{Convert.ToString(animal.GetOrder())}  {animal.name}");
+                animal = queue.DeQueue();
+            }
+
+            List<GraphNode> nodes = new List<GraphNode>();
             //var node0 = new GraphNode("0");
             //var node1 = new GraphNode("1");
             //var node2 = new GraphNode("2");
