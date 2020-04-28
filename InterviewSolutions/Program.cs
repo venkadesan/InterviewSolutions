@@ -105,7 +105,7 @@ namespace InterviewSolutions
             //node = solution.Parition1(ll.head, parition);
 
             LinkedListAddHelper helper = new LinkedListAddHelper();
-             var node = helper.AddLists(ll.head, ll2.head, 0);
+             var node = helper.AddLists(ll.head, ll2.head );
 
             //int maxPosition = 10;
 
