@@ -78,15 +78,23 @@ namespace InterviewSolutions
 
             // Linked List
 
-            //LinkedList ll = new LinkedList();
-            ////int[] numbers = new int[] { 1, 2, 4, 3, 4, 5, 3, 3, 2 };
+            LinkedList ll = new LinkedList();
+            int[] numbers = new int[] { 7,1,6};
+            int[] numbers1 = new int[] { 5,9,2 };
             //int[] numbers = new int[] { 1, 4, 3, 2, 5, 2 };
 
-            //foreach (int num in numbers)
-            //{
-            //    if (ll.head == null) ll.head = new LinkedListNode(num);
-            //    else ll.head.AppendNodeToTail(num);
-            //}
+            foreach (int num in numbers)
+            {
+                if (ll.head == null) ll.head = new LinkedListNode(num);
+                else ll.head.AppendNodeToTail(num);
+            }
+
+            LinkedList ll2 = new LinkedList();
+            foreach (int num in numbers1)
+            {
+                if (ll2.head == null) ll2.head = new LinkedListNode(num);
+                else ll2.head.AppendNodeToTail(num);
+            }
             //LinkedListSolution solution = new LinkedListSolution();
             ////solution.RemoveDuplicates(ll.head);
             ////solution.RemoveDuplicatesRunnerTechnique(ll.head);
@@ -95,6 +103,9 @@ namespace InterviewSolutions
             //var node = solution.ReturnKthtoLast(ll.head, kthLast);
             //int parition = 3;
             //node = solution.Parition1(ll.head, parition);
+
+            LinkedListAddHelper helper = new LinkedListAddHelper();
+             var node = helper.AddLists(ll.head, ll2.head, 0);
 
             //int maxPosition = 10;
 

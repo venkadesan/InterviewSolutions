@@ -50,6 +50,7 @@
     <Compile Include="DataStructure\Stack.cs" />
     <Compile Include="DataStructure\Tree.cs" />
     <Compile Include="LinkedListProblems\LinkedListSolution.cs" />
+    <Compile Include="LinkedListProblems\LinkedListAddHelper.cs" />
     <Compile Include="OOP\Person.cs" />
     <Compile Include="OOP\Student.cs" />
     <Compile Include="StackProblems\Animal.cs" />

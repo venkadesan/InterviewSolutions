@@ -21,10 +21,18 @@ namespace InterviewSolutions.DataStructure
         public int Data;
         public LinkedListNode Next;
         public LinkedListNode Previous;
+
+        #region Consturctor
+        public LinkedListNode()
+        {
+
+        }
         public LinkedListNode(int data)
         {
             this.Data = data;
         }
+        #endregion
+
 
 
         #region AppendNodeToTail
