@@ -1,7 +1,7 @@
 ﻿const name = 'square';
 function draw(ctx, length, x, y, color) {
     ctx.fillStyle = color;
-    ctx.fillRect(c, y, length, length);
+    ctx.fillRect(x, y, length, length);
     return {
         length: length,
         x: x,
@@ -10,7 +10,7 @@ function draw(ctx, length, x, y, color) {
     };
 }
 function random(min, max) {
-    let num = Math.floor(Math.random() * (max - min)) + muin;
+    let num = Math.floor(Math.random() * (max - min)) + min;
     return num;
 }
 
