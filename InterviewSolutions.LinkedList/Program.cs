@@ -11,17 +11,17 @@ namespace InterviewSolutions.LinkedList
             // Linked List
             DataStructure.LinkedList ll1 = new DataStructure.LinkedList();
             int[] numbers1 = new int[] { 3, 1, 5, 9 };
-            Helper.GenerateList(ll1, numbers1);
+            LinkedListHelper.GenerateList(ll1, numbers1);
 
             int[] numbers2 = new int[] { 7, 2, 1 };
             DataStructure.LinkedList ll2 = new DataStructure.LinkedList();
-            Helper.GenerateList(ll2, numbers2);
+            LinkedListHelper.GenerateList(ll2, numbers2);
 
             ll1.head.AppendNodeToTail(ll2.head);
 
             DataStructure.LinkedList ll3 = new DataStructure.LinkedList();
             int[] numbers3 = new int[] { 4, 6 };
-            Helper.GenerateList(ll3, numbers3);
+            LinkedListHelper.GenerateList(ll3, numbers3);
 
             ll3.head.AppendNodeToTail(ll2.head);
 

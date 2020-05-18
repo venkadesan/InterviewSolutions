@@ -16,7 +16,7 @@ namespace InterviewSolutions.LinkedListProblems
 
 
     #region LinkedListHelper Class
-    public class LinkedListAddHelper
+    public class LinkedListHelper
     {
 
         public LinkedListNode AddLists(LinkedListNode node1, LinkedListNode node2)
@@ -102,14 +102,7 @@ namespace InterviewSolutions.LinkedListProblems
             }
             return len;
         }
-    }
-    #endregion
 
-
-    #region LinkedListHelperClass
-
-    public static class Helper
-    {
         public static void GenerateList(DataStructure.LinkedList ll, int[] numbers)
         {
             if (numbers == null || numbers.Length == 0) return;
@@ -129,4 +122,5 @@ namespace InterviewSolutions.LinkedListProblems
         }
     }
     #endregion
+
 }
