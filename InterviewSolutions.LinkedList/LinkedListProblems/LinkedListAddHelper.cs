@@ -105,4 +105,28 @@ namespace InterviewSolutions.LinkedListProblems
     }
     #endregion
 
+
+    #region LinkedListHelperClass
+
+    public static class Helper
+    {
+        public static void GenerateList(DataStructure.LinkedList ll, int[] numbers)
+        {
+            if (numbers == null || numbers.Length == 0) return;
+
+            foreach (int num in numbers)
+            {
+                if (ll.head == null)
+                {
+                    ll.head = new LinkedListNode(num);
+                }
+                else
+                {
+                    ll.head.AppendNodeToTail(num);
+                }
+            }
+
+        }
+    }
+    #endregion
 }

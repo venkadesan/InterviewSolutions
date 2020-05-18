@@ -36,7 +36,7 @@ namespace InterviewSolutions.DataStructure
 
 
         #region AppendNodeToTail
-        public void AppendNodeToTail(int data)
+        public LinkedListNode AppendNodeToTail(int data)
         {
             LinkedListNode end = new LinkedListNode(data);
             LinkedListNode n = this;
@@ -45,6 +45,18 @@ namespace InterviewSolutions.DataStructure
                 n = n.Next;
             }
             n.Next = end;
+            return end;
+        }
+
+        public void AppendNodeToTail(LinkedListNode node)
+        {
+            LinkedListNode n = this;
+            while (n.Next != null)
+            {
+                n = n.Next;
+            }
+            n.Next = node;
+            
         }
 
         #endregion

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -156,6 +157,74 @@ namespace InterviewSolutions.LinkedListProblems
             return before_head.Next;
         }
         #endregion
+
+
+        #region FindIntersection
+        public LinkedListNode FindIntersection(LinkedListNode list1, LinkedListNode list2)
+        {
+            if (list1 == null || list2 == null) return null;
+            // Get tail and sizes
+            var result1 = GetTailAndSize(list1);
+            var result2 = GetTailAndSize(list2);
+            // No interesection, if tails are different. tail have to be same for intersection linked list.
+            if (result1.tail != result2.tail)
+            {
+                return null;
+            }
+            // Set pointer to the start of each linked list
+            LinkedListNode shorter = result1.size < result2.size ? list1 : list2;
+            LinkedListNode longer = result1.size < result2.size ? list2 : list1;
+
+            longer = getKthNode(longer, Math.Abs(result1.size - result2.size));
+            while (shorter != longer)
+            {
+                shorter = shorter.Next;
+                longer = longer.Next;
+            }
+            return shorter;
+        }
+
+
+        #region getTailAndSize
+        private Result GetTailAndSize(LinkedListNode list)
+        {
+            if (list == null) return null;
+            int size = 1;
+            LinkedListNode current = list;
+            while (current.Next != null)
+            {
+                current = current.Next;
+                size++;
+            }
+            return new Result(current, size);
+        }
+        #endregion
+
+
+        #region getKthNode
+        private LinkedListNode getKthNode(LinkedListNode head, int k){
+            LinkedListNode current = head;
+            while (k > 0 && current != null)
+            {
+                current = current.Next;
+                k--;
+            }
+            return current;
+        }
+        #endregion
+
+        #endregion
+
+        public class Result
+        {
+            public LinkedListNode tail { get; set; }
+            public int size = 0;
+            public Result(LinkedListNode tail, int size)
+            {
+                this.tail = tail;
+                this.size = size;
+            }
+        }
     }
 }
 

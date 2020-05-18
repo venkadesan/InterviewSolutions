@@ -9,26 +9,24 @@ namespace InterviewSolutions.LinkedList
         static void Main(string[] args)
         {
             // Linked List
+            DataStructure.LinkedList ll1 = new DataStructure.LinkedList();
+            int[] numbers1 = new int[] { 3, 1, 5, 9 };
+            Helper.GenerateList(ll1, numbers1);
 
-
-            DataStructure.LinkedList ll = new DataStructure.LinkedList();
-            int[] numbers = new int[] { 7, 1, 6 };
-            int[] numbers1 = new int[] { 5, 9, 2 };
-            //int[] numbers = new int[] { 1, 4, 3, 2, 5, 2 };
-
-            foreach (int num in numbers)
-            {
-                if (ll.head == null) ll.head = new LinkedListNode(num);
-                else ll.head.AppendNodeToTail(num);
-            }
-
+            int[] numbers2 = new int[] { 7, 2, 1 };
             DataStructure.LinkedList ll2 = new DataStructure.LinkedList();
-            foreach (int num in numbers1)
-            {
-                if (ll2.head == null) ll2.head = new LinkedListNode(num);
-                else ll2.head.AppendNodeToTail(num);
-            }
-            //LinkedListSolution solution = new LinkedListSolution();
+            Helper.GenerateList(ll2, numbers2);
+
+            ll1.head.AppendNodeToTail(ll2.head);
+
+            DataStructure.LinkedList ll3 = new DataStructure.LinkedList();
+            int[] numbers3 = new int[] { 4, 6 };
+            Helper.GenerateList(ll3, numbers3);
+
+            ll3.head.AppendNodeToTail(ll2.head);
+
+            LinkedListSolution solution = new LinkedListSolution();
+            var node = solution.FindIntersection(ll1.head, ll3.head);
             ////solution.RemoveDuplicates(ll.head);
             ////solution.RemoveDuplicatesRunnerTechnique(ll.head);
             //int kthLast = 3;
@@ -37,8 +35,10 @@ namespace InterviewSolutions.LinkedList
             //int parition = 3;
             //node = solution.Parition1(ll.head, parition);
 
-            LinkedListAddHelper helper = new LinkedListAddHelper();
-            var node = helper.AddLists(ll.head, ll2.head);
+            //LinkedListAddHelper helper = new LinkedListAddHelper();
+            //var node = helper.AddLists(ll.head, ll2.head);
+
+
         }
     }
 }
