@@ -31,6 +31,12 @@ namespace InterviewSolutions.Array
             }
             else
                 Console.Write("Both Strings are Not one Edit Away");
+
+
+            // String compression problem.
+            CompressString str = new CompressString();
+            string strToProcess = "aabccccccaaa";
+            var compressed = str.Compress(strToProcess);
         }
     }
 }
