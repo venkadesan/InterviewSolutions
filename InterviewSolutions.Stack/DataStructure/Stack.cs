@@ -32,6 +32,7 @@ namespace InterviewSolutions.DataStructure
             if (top == null) throw new Exception("Empty  stack");
             T item = top.data;
             top = top.below;
+            _size--;
             return item;
         }
         #endregion

@@ -56,10 +56,13 @@ namespace InterviewSolutions.Stack
                 Console.WriteLine($"pushing to Stack {i}");
                 stacks.push(i);
             }
-            stacks.PopAt(1);
+            stacks.PopAt(2);
             for (int i = 0; i < 10; i++)
             {
-                Console.WriteLine($"popping out of stack {stacks.Pop()}");
+                if (!stacks.IsEmpty())
+                {
+                    Console.WriteLine($"popping out of stack {stacks.Pop()}");
+                }
             }
             
 
