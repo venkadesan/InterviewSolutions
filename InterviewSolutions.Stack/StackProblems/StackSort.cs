@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,19 +9,19 @@ namespace InterviewSolutions.StackProblems
     public class StackSort
     {
 
-        public void Sort(MyStack<int> myStack)
+        public void Sort(Stack<int> myStack)
         {
-            MyStack<int> tempStack = new MyStack<int>();
-            while (!myStack.isEmpty())
+            Stack<int> tempStack = new Stack<int>();
+            while (!myStack.IsEmpty())
             {
                 int tmp = myStack.pop();
-                while (!tempStack.isEmpty() && tempStack.peek() > tmp)
+                while (!tempStack.IsEmpty() && tempStack.peek() > tmp)
                 {
                     myStack.push(tempStack.pop());
                 }
                 tempStack.push(tmp);
             }
-            while (!tempStack.isEmpty())
+            while (!tempStack.IsEmpty())
             {
                 myStack.push(tempStack.pop());
             }

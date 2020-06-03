@@ -10,20 +10,20 @@ namespace InterviewSolutions.Stack
         {
 
 
-            MyStack<int> myStack = new MyStack<int>();
+            Stack<int> myStack = new Stack<int>();
             myStack.push(10);
             myStack.push(3);
             myStack.push(8);
             myStack.push(5);
             myStack.push(11);
             myStack.push(2);
-            StackSort stackSort = new StackProblems.StackSort();
+            StackSort stackSort = new StackSort();
             stackSort.Sort(myStack);
 
 
 
 
-            FixedMultiStack multiStack = new StackProblems.FixedMultiStack(3);
+            FixedMultiStack multiStack = new FixedMultiStack(3);
             // Inserting into first stack
             multiStack.push(0, 1);
             multiStack.push(0, 2);
@@ -48,6 +48,21 @@ namespace InterviewSolutions.Stack
             Console.WriteLine(multiStack.Pop(2).ToString());
             Console.WriteLine(multiStack.Pop(2).ToString());
             Console.WriteLine(multiStack.Pop(2).ToString());
+
+            SetOfStacks stacks = new SetOfStacks(2);
+            // pushing to stack data structure
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine($"pushing to Stack {i}");
+                stacks.push(i);
+            }
+            stacks.PopAt(1);
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine($"popping out of stack {stacks.Pop()}");
+            }
+            
+
         }
     }
 }

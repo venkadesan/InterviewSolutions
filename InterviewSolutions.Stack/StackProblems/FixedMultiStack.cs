@@ -73,7 +73,7 @@ namespace InterviewSolutions.StackProblems
         }
         #endregion
 
-        #region "Peek"
+        #region Peek
         public int peek(int stackNum)
         {
             if (isEmpty(stackNum))
