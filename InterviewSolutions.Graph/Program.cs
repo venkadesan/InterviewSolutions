@@ -7,6 +7,15 @@ namespace InterviewSolutions.Graph
     {
         static void Main(string[] args)
         {
+
+            var G = BuildGraph();
+            //G.DFS(node0);
+            IsRouteExits(G);
+
+        }
+
+        private static DataStructure.Graph BuildGraph()
+        {
             List<GraphNode> nodes = new List<GraphNode>();
             var node0 = new GraphNode("0");
             var node1 = new GraphNode("1");
@@ -21,7 +30,6 @@ namespace InterviewSolutions.Graph
             nodes.Add(node4);
             nodes.Add(node5);
             DataStructure.Graph G = new DataStructure.Graph(nodes);
-
             G.Add_Vertex(node0, node1);
             G.Add_Vertex(node0, node4);
             G.Add_Vertex(node0, node5);
@@ -34,9 +42,13 @@ namespace InterviewSolutions.Graph
             G.Add_Vertex(node3, node4);
 
             G.Add_Vertex(node2, node1);
-            //G.DFS(node0);
-            var source = node0;
-            var dest = node2;
+            return G;
+        }
+
+        private static bool IsRouteExits(DataStructure.Graph G)
+        {
+            var source = new GraphNode("0");
+            var dest = new GraphNode("1");
             if (G.IsRouteExists(G, source, dest))
             {
                 Console.WriteLine($"{source.Name} Route Exists {dest.Name}");
@@ -45,6 +57,7 @@ namespace InterviewSolutions.Graph
             {
                 Console.WriteLine($"{source.Name} Route Not Exists {dest.Name}");
             }
+            return false;
         }
     }
 }
