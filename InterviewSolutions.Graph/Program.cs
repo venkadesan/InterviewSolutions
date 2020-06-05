@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using InterviewSolutions.DataStructure;
+using InterviewSolutions.Graph.Helper;
 namespace InterviewSolutions.Graph
 {
     class Program
@@ -49,7 +50,8 @@ namespace InterviewSolutions.Graph
         {
             var source = new GraphNode("0");
             var dest = new GraphNode("1");
-            if (G.IsRouteExists(G, source, dest))
+            SearchHelper helper = new SearchHelper();
+            if (helper.IsRouteExists(G, source, dest))
             {
                 Console.WriteLine($"{source.Name} Route Exists {dest.Name}");
             }
