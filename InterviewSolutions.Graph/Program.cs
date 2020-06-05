@@ -10,9 +10,10 @@ namespace InterviewSolutions.Graph
         {
 
             var G = BuildGraph();
-            //G.DFS(node0);
-            IsRouteExits(G);
-
+            var startNode = G.Nodes[0];
+            SearchHelper.BreadthFirstSearch(startNode);
+            SearchHelper.DepthFirstSearch(startNode);
+            
         }
 
         private static DataStructure.Graph BuildGraph()

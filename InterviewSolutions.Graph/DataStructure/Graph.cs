@@ -53,7 +53,6 @@ namespace InterviewSolutions.DataStructure
         }
 
         public List<GraphNode> Neighbors { get; set; }
-        public bool visited { get; set; }
         public State State { get; set; }
     }
 }

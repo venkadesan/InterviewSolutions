@@ -10,22 +10,58 @@ namespace InterviewSolutions.Graph.Helper
     {
 
         #region public methods
-        public void DFS(GraphNode root)
+        public static void DepthFirstSearch(GraphNode root)
         {
             if (root == null) return;
             Visit(root);
             root.State = State.Visited;
-            if (root.Neighbors != null)
+            if (root.Neighbors != null && root.Neighbors.Count > 0)
             {
                 foreach (GraphNode node in root.Neighbors)
                 {
-                    if (node.State != State.UnVisited)
+                    if (node.State != State.Visited)
                     {
-                        DFS(node);
+                        DepthFirstSearch(node);
                     }
                 }
             }
         }
+
+        #region BreadthFirstSearch
+        /// <summary>
+        ///  Breadth First Search Algorithm for Graph Data Structures.
+        /// </summary>
+        /// <param name="root">root of the graph</param>
+        public static void BreadthFirstSearch(GraphNode root)
+        {
+            if (root == null) return;
+            Console.WriteLine("Breadth First Search starts:");
+            Queue<GraphNode> queue = new Queue<GraphNode>();
+            queue.Enqueue(root);
+            while (queue.Count > 0)
+            {
+                GraphNode node = queue.Dequeue();
+                if (node.State != State.Visited)
+                {
+                    node.State = State.Visited;
+                    Visit(node);
+                }
+                if (node.Neighbors != null && node.Neighbors.Count > 0)
+                {
+                    foreach (var neighbor in node.Neighbors)
+                    {
+                        if (neighbor.State != State.Visited)
+                        {
+                            queue.Enqueue(neighbor);
+                        }
+                    }
+                }
+            }
+            Console.WriteLine("Breadth First Search ends:");
+        }
+
+        #endregion
+
 
         public bool IsRouteExists(DataStructure.Graph G, GraphNode source, GraphNode dest)
         {
@@ -77,9 +113,9 @@ namespace InterviewSolutions.Graph.Helper
 
 
         #region private methods
-        private void Visit(GraphNode node)
+        private static void Visit(GraphNode node)
         {
-            Console.WriteLine(node.Name);
+            Console.WriteLine($"visiting node:{node.Name}");
         }
 
         #endregion
