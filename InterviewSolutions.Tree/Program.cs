@@ -11,16 +11,9 @@ namespace InterviewSolutions.Tree
         static void Main(string[] args)
         {
             // Tree Construction.
-            DataStructure.Tree tree = new DataStructure.Tree();
-            tree.root = new TreeNode(1);
-            tree.root.left = new TreeNode(2);
-            tree.root.left.parent = tree.root;
-            tree.root.right = new TreeNode(3);
-            tree.root.right.parent = tree.root;
-            tree.root.left.left = new TreeNode(4);
-            tree.root.left.left.parent = tree.root.left;
-            tree.root.left.right = new TreeNode(5);
-            tree.root.left.right.parent = tree.root.right;
+            var tree = new DataStructure.Tree();
+            ConstructTree(tree);
+            Console.WriteLine(SubTreeProblem.ContainsTree(tree.root, tree.root.left));
             var isBalanced = tree.IsBalanced(tree.root);
             Console.WriteLine($"Tree Balanced: {isBalanced.ToString()}");
             tree.ValidateBST(tree.root);
@@ -80,5 +73,21 @@ namespace InterviewSolutions.Tree
             int valueToBeDeleted = Convert.ToInt16(Console.ReadLine());
 
         }
+
+        private static void ConstructTree(DataStructure.Tree tree)
+        {
+            var root = new TreeNode(1);
+            tree.root = root;
+            var left = new TreeNode(2);
+            tree.root.left = left;
+            tree.root.left.parent = tree.root;
+            tree.root.right = new TreeNode(3);
+            tree.root.right.parent = tree.root;
+            tree.root.left.left = new TreeNode(4);
+            tree.root.left.left.parent = tree.root.left;
+            tree.root.left.right = new TreeNode(5);
+            tree.root.left.right.parent = tree.root.right;
+        }
+
     }
 }
