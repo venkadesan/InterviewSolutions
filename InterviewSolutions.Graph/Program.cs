@@ -12,8 +12,10 @@ namespace InterviewSolutions.Graph
             var G = BuildGraph();
             var startNode = G.Nodes[0];
             SearchHelper.BreadthFirstSearch(startNode);
+            // need to reset for node search status to unvisited.
             SearchHelper.DepthFirstSearch(startNode);
-            
+            SearchHelper.DepthFirstSearchIterative(startNode);
+
         }
 
         private static DataStructure.Graph BuildGraph()

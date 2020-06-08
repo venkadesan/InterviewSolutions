@@ -10,6 +10,12 @@ namespace InterviewSolutions.Graph.Helper
     {
 
         #region public methods
+        #region DepthFirstSearch
+
+        /// <summary>
+        ///  Depth first search using rescursive solution
+        /// </summary>
+        /// <param name="root"></param>
         public static void DepthFirstSearch(GraphNode root)
         {
             if (root == null) return;
@@ -21,11 +27,42 @@ namespace InterviewSolutions.Graph.Helper
                 {
                     if (node.State != State.Visited)
                     {
+
                         DepthFirstSearch(node);
                     }
                 }
             }
         }
+
+        /// <summary>
+        /// Depth first search using Iterative solution,
+        /// </summary>
+        /// <param name="root">starting node</param>
+        public static void DepthFirstSearchIterative(GraphNode root)
+        {
+            if (root == null) return;
+            Stack<GraphNode> nodes = new Stack<GraphNode>(); // Stack to hold list of graph nodes.
+            nodes.Push(root);
+            while (nodes.Count != 0)
+            {
+                GraphNode node = nodes.Pop();
+                if (node.State != State.Visited)
+                {
+                    node.State = State.Visited;
+                    Visit(node);
+                    if (node?.Neighbors?.Count > 0)
+                    {
+                        foreach (var neighbor in node.Neighbors)
+                        {
+                            nodes.Push(neighbor);
+                        }
+                    }
+                }
+
+            }
+        }
+        #endregion
+
 
         #region BreadthFirstSearch
         /// <summary>
