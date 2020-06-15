@@ -9,7 +9,52 @@ namespace InterviewSolutions.Stack
         static void Main(string[] args)
         {
 
+            // Sorting the stack
+            sortingStack();
+            // min stack 
+            minStack();
+            // Multi stack 
+            fixedSizeMultiStack();
+            // set of stacks
+            setofStack();
 
+        }
+
+        static void minStack()
+        {
+
+            // STack min problem
+            StackMin min = new StackMin();
+
+            // pushing the data to min stack
+            Console.WriteLine($"Pushing {5} to Min Stack:");
+            min.push(5);
+            Console.WriteLine($"Current Min value :{min.Min()}");
+
+            Console.WriteLine($"Pushing {6} to Min Stack:");
+            min.push(6);
+            Console.WriteLine($"Current Min value :{min.Min()}");
+
+            Console.WriteLine($"Pushing {3} to Min Stack");
+            min.push(3);
+            Console.WriteLine($"Current Min value :{min.Min()}");
+
+            Console.WriteLine($"Pushing {7} to Min Stack");
+            Console.WriteLine(min.Min());
+            Console.WriteLine($"Current Min value :{min.Min()}");
+            min.push(7);
+
+            // popping the data from the stack
+            while (min.Count != 0)
+            {
+                Console.WriteLine($"popping from the current stack :{min.pop()}");
+                Console.WriteLine($"Current Min value :{min.Min()}");
+            }
+
+        }
+
+        static void sortingStack()
+        {
             Stack<int> myStack = new Stack<int>();
             myStack.push(10);
             myStack.push(3);
@@ -20,9 +65,10 @@ namespace InterviewSolutions.Stack
             StackSort stackSort = new StackSort();
             stackSort.Sort(myStack);
 
+        }
 
-
-
+        static void fixedSizeMultiStack()
+        {
             FixedMultiStack multiStack = new FixedMultiStack(3);
             // Inserting into first stack
             multiStack.push(0, 1);
@@ -49,6 +95,10 @@ namespace InterviewSolutions.Stack
             Console.WriteLine(multiStack.Pop(2).ToString());
             Console.WriteLine(multiStack.Pop(2).ToString());
 
+        }
+        static void setofStack()
+        {
+
             SetOfStacks stacks = new SetOfStacks(2);
             // pushing to stack data structure
             for (int i = 0; i < 10; i++)
@@ -64,7 +114,6 @@ namespace InterviewSolutions.Stack
                     Console.WriteLine($"popping out of stack {stacks.Pop()}");
                 }
             }
-            
 
         }
     }
