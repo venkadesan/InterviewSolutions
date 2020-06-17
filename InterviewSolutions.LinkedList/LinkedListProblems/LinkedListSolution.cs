@@ -96,7 +96,6 @@ namespace InterviewSolutions.LinkedListProblems
         }
         #endregion
 
-
         #region Partition
         public LinkedListNode Partition(LinkedListNode node, int x)
         {
@@ -158,7 +157,6 @@ namespace InterviewSolutions.LinkedListProblems
         }
         #endregion
 
-
         #region FindIntersection
         public LinkedListNode FindIntersection(LinkedListNode list1, LinkedListNode list2)
         {
@@ -202,7 +200,8 @@ namespace InterviewSolutions.LinkedListProblems
 
 
         #region getKthNode
-        private LinkedListNode getKthNode(LinkedListNode head, int k){
+        private LinkedListNode getKthNode(LinkedListNode head, int k)
+        {
             LinkedListNode current = head;
             while (k > 0 && current != null)
             {
