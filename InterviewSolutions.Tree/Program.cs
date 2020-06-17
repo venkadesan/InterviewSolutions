@@ -22,8 +22,8 @@ namespace InterviewSolutions.Tree
             var binaryTree = new DataStructure.Tree();
             ConstructBinaryTree(binaryTree);
             CommonAncestor ancestor = new CommonAncestor();
-            //ancestor.FindFirstcommonAncestor(tree.root, );
-
+            var firstCommonAncestor = ancestor.FindFirstcommonAncestor(binaryTree.root, binaryTree.root.left.left, binaryTree.root.right);
+            Console.WriteLine($"CommonAncestor {firstCommonAncestor.data}");
 
 
             var lists = tree.CreateLevelLinkedListIterative(tree.root);
@@ -91,23 +91,31 @@ namespace InterviewSolutions.Tree
             tree.root.left.left = new TreeNode(4);
             tree.root.left.left.parent = tree.root.left;
             tree.root.left.right = new TreeNode(5);
-            tree.root.left.right.parent = tree.root.right;
+            tree.root.left.right.parent = tree.root.left;
         }
 
 
         private static void ConstructBinaryTree(DataStructure.Tree tree)
         {
+            // Root
             var root = new TreeNode(20);
             tree.root = root;
+            // left node
             var left = new TreeNode(10);
             tree.root.left = left;
             tree.root.left.parent = tree.root;
+            //right node
             tree.root.right = new TreeNode(30);
             tree.root.right.parent = tree.root;
+
+            // left node's left
             tree.root.left.left = new TreeNode(5);
             tree.root.left.left.parent = tree.root.left;
-            tree.root.left.right = new TreeNode(5);
-            tree.root.left.right.parent = tree.root.right;
+
+            // left node's right node
+            tree.root.left.right = new TreeNode(15);
+            tree.root.left.right.parent = tree.root.left;
+
         }
 
     }
