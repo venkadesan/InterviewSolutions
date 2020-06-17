@@ -18,6 +18,11 @@ namespace InterviewSolutions.Tree
             Console.WriteLine($"Tree Balanced: {isBalanced.ToString()}");
             tree.ValidateBST(tree.root);
 
+            // Constructing binary tree
+            var binaryTree = new DataStructure.Tree();
+            ConstructBinaryTree(binaryTree);
+            CommonAncestor ancestor = new CommonAncestor();
+            //ancestor.FindFirstcommonAncestor(tree.root, );
 
 
 
@@ -84,6 +89,22 @@ namespace InterviewSolutions.Tree
             tree.root.right = new TreeNode(3);
             tree.root.right.parent = tree.root;
             tree.root.left.left = new TreeNode(4);
+            tree.root.left.left.parent = tree.root.left;
+            tree.root.left.right = new TreeNode(5);
+            tree.root.left.right.parent = tree.root.right;
+        }
+
+
+        private static void ConstructBinaryTree(DataStructure.Tree tree)
+        {
+            var root = new TreeNode(20);
+            tree.root = root;
+            var left = new TreeNode(10);
+            tree.root.left = left;
+            tree.root.left.parent = tree.root;
+            tree.root.right = new TreeNode(30);
+            tree.root.right.parent = tree.root;
+            tree.root.left.left = new TreeNode(5);
             tree.root.left.left.parent = tree.root.left;
             tree.root.left.right = new TreeNode(5);
             tree.root.left.right.parent = tree.root.right;
