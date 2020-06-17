@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using InterviewSolutions.DataStructure;
 using InterviewSolutions.TreeProblems;
+using InterviewSolutions.BinarySearchTree;
 
 namespace InterviewSolutions.Tree
 {
@@ -13,49 +14,25 @@ namespace InterviewSolutions.Tree
             // Tree Construction.
             var tree = new DataStructure.Tree();
             ConstructTree(tree);
-            Console.WriteLine(SubTreeProblem.ContainsTree(tree.root, tree.root.left));
-            var isBalanced = tree.IsBalanced(tree.root);
-            Console.WriteLine($"Tree Balanced: {isBalanced.ToString()}");
-            tree.ValidateBST(tree.root);
 
-            // Constructing binary tree
-            var binaryTree = new DataStructure.Tree();
-            ConstructBinaryTree(binaryTree);
-            CommonAncestor ancestor = new CommonAncestor();
-            var firstCommonAncestor = ancestor.FindFirstcommonAncestor(binaryTree.root, binaryTree.root.left.left, binaryTree.root.right);
-            Console.WriteLine($"CommonAncestor {firstCommonAncestor.data}");
+            // Tree Traversals
+            //TreeTraversal(tree);
 
+            //ContainsSubTree
+            ContainsSubTree(tree);
 
-            var lists = tree.CreateLevelLinkedListIterative(tree.root);
+            // Binary Search tree.
+            BinarySearchTree();
 
+            // Creating minimal BST.
+            CreateMinimalBST();
 
-            List<int> arry = new List<int>() { 1, 2, 3, 4, 5, 6, 7 };
-            TreeNode node = MinimalTree.CreateMinimalBST(arry.ToArray());
-            //Tree tree = new Tree();
-            //tree.IsBalanced(node);
-            tree.ValidateBST(node);
-
-            TreeNode sucessor = tree.InBSTOrderSuccessor(node);
-
-
-            Console.WriteLine(node.data);
-            Console.WriteLine("Preorder traversal " +
-                               "of binary tree is ");
-            tree.PreOrderTraversal(tree.root);
-
-            Console.WriteLine("\nInorder traversal " +
-                                "of binary tree is ");
-            tree.InOrderTraversal(tree.root);
-
-            Console.WriteLine("\nPostorder traversal " +
-                                  "of binary tree is ");
-            tree.PostOrderTraversal(tree.root);
-
-
+            //FirstCommonAncestor
+            FirstCommonAncestor();
         }
 
 
-        private static void Tree()
+        private static void BinarySearchTree()
         {
             int[] binaryTree = new int[] { 5, 6, 11, 4, 7 };
             DataStructure.Tree tree = new DataStructure.Tree();
@@ -71,12 +48,17 @@ namespace InterviewSolutions.Tree
                 else
                 {
                     Console.WriteLine("Inserting LinkedListNode {0}", value.ToString());
-                    tree.Insert(ref tree.root, value);
+                    BinarySearchTreeHelper.Insert(tree.root, value);
                 }
             }
+
+            var isBalanced = BinarySearchTreeHelper.IsBalanced(tree.root);
+            Console.WriteLine($"Tree Balanced: {isBalanced.ToString()}");
+
             Console.WriteLine("Enter value to be deleted");
             int valueToBeDeleted = Convert.ToInt16(Console.ReadLine());
-
+            // validating Binary search tree 
+            BinarySearchTreeHelper.ValidateBST(tree.root);
         }
 
         private static void ConstructTree(DataStructure.Tree tree)
@@ -93,7 +75,6 @@ namespace InterviewSolutions.Tree
             tree.root.left.right = new TreeNode(5);
             tree.root.left.right.parent = tree.root.left;
         }
-
 
         private static void ConstructBinaryTree(DataStructure.Tree tree)
         {
@@ -118,5 +99,48 @@ namespace InterviewSolutions.Tree
 
         }
 
+        private static void TreeTraversal(DataStructure.Tree tree)
+        {
+            Console.WriteLine("Preorder traversal " +
+                                           "of binary tree is ");
+            TreeTraversals.PreOrderTraversal(tree.root);
+
+            Console.WriteLine("\nInorder traversal " +
+                                "of binary tree is ");
+            TreeTraversals.InOrderTraversal(tree.root);
+
+            Console.WriteLine("\nPostorder traversal " +
+                                  "of binary tree is ");
+            TreeTraversals.PostOrderTraversal(tree.root);
+        }
+
+        private static void CreateMinimalBST()
+        {
+            List<int> arry = new List<int>() { 1, 2, 3, 4, 5, 6, 7 };
+            TreeNode node = MinimalTree.CreateMinimalBST(arry.ToArray());
+            BinarySearchTreeHelper.ValidateBST(node);
+            TreeNode sucessor = BinarySearchTreeHelper.InBSTOrderSuccessor(node);
+            Console.WriteLine(node.data);
+        }
+
+        private static void FirstCommonAncestor()
+        {
+            // Constructing binary tree
+            var binaryTree = new DataStructure.Tree();
+            ConstructBinaryTree(binaryTree);
+            CommonAncestor ancestor = new CommonAncestor();
+            var firstCommonAncestor = ancestor.FindFirstcommonAncestor(binaryTree.root, binaryTree.root.left.left, binaryTree.root.right);
+            Console.WriteLine($"CommonAncestor {firstCommonAncestor.data}");
+        }
+
+        private static void ContainsSubTree(DataStructure.Tree tree)
+        {
+            Console.WriteLine(SubTreeProblem.ContainsTree(tree.root, tree.root.left));
+        }
+
+        private static void LelveLinkedListIterative(DataStructure.Tree tree)
+        {
+            var lists = LevelLinkedList.CreateLevelLinkedListIterative(tree.root);
+        }
     }
 }
