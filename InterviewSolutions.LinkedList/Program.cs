@@ -38,7 +38,20 @@ namespace InterviewSolutions.LinkedList
             //LinkedListAddHelper helper = new LinkedListAddHelper();
             //var node = helper.AddLists(ll.head, ll2.head);
 
+            // is Palindrome
+            IsPalindrome();
 
+
+        }
+
+
+        private static void IsPalindrome()
+        {
+            int[] numbers = new int[] { 0, 1, 2, 3, 2, 1, 0 };
+            DataStructure.LinkedList ll = new DataStructure.LinkedList();
+            LinkedListHelper.GenerateList(ll, numbers);
+            LinkedListPalindrome pal = new LinkedListPalindrome();
+            Console.WriteLine($"linked palindrom { pal.IsPalindrome(ll.head)}");
         }
     }
 }

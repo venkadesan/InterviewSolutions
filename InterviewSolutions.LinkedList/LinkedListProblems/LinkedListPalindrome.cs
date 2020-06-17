@@ -57,6 +57,7 @@ namespace InterviewSolutions.LinkedListProblems
             public Result(LinkedListNode n, bool res)
             {
                 node = n;
+                result = res;
             }
         }
     }
