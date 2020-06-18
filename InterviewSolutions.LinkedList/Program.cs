@@ -41,6 +41,9 @@ namespace InterviewSolutions.LinkedList
             // is Palindrome
             IsPalindrome();
 
+            // Linked List Loop Detection
+            FindLinkedListLoop();
+
 
         }
 
@@ -52,6 +55,20 @@ namespace InterviewSolutions.LinkedList
             LinkedListHelper.GenerateList(ll, numbers);
             LinkedListPalindrome pal = new LinkedListPalindrome();
             Console.WriteLine($"linked palindrom { pal.IsPalindrome(ll.head)}");
+        }
+
+        private static void FindLinkedListLoop()
+        {
+            int[] intArry = new int[] { 1, 2, 3, 4, 5 };
+            DataStructure.LinkedList ll = new DataStructure.LinkedList();
+            LinkedListHelper.GenerateList(ll, intArry);
+            ll.head.AppendNodeToTail(ll.head.Next.Next.Next);
+            LinkedListLoopDetection detection = new LinkedListLoopDetection();
+            LinkedListNode node = detection.FindLoopInLinkedList(ll);
+            if (node != null)
+            {
+                Console.WriteLine($"Loop is detected at { node.Data}");
+            }
         }
     }
 }
