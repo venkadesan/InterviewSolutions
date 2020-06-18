@@ -6,7 +6,9 @@ namespace InterviewSolutions.DP
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            //1.Triple steps
+            Console.WriteLine($"{TripleSteps.CountWays(5)}");
+            
         }
     }
 }
