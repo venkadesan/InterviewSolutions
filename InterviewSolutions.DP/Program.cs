@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InterviewSolutions.DP.Problems;
+using System;
 
 namespace InterviewSolutions.DP
 {
@@ -11,6 +12,10 @@ namespace InterviewSolutions.DP
             //TripleStep();
             // Robot Grid problem
             RobotGrid();
+            // magic index problem
+            MagicIndex();
+            
+           
 
         }
 
@@ -31,6 +36,14 @@ namespace InterviewSolutions.DP
             };
             Grid grid = new Grid();
             var path = grid.getPath(matrix);
+        }
+
+
+        private static void MagicIndex()
+        {
+            int[] array = new int[] { -3, -2, -1, 1, 2, 3, 5, 7};
+            MagicIndex index = new MagicIndex();
+            Console.WriteLine($"{index.MagicFast(array)}");
         }
     }
 }
