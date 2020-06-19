@@ -5,7 +5,7 @@ using System.Text;
 namespace InterviewSolutions.DP
 {
 
-    #region GridPath
+    #region Grid
     public class Grid
     {
 
@@ -30,7 +30,6 @@ namespace InterviewSolutions.DP
             return null;
         }
         #endregion
-
 
         #region private method
         private bool getPath(bool[][] maze, int row, int col, List<Point> path, HashSet<Point> failedPoints)
