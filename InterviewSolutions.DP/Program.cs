@@ -55,7 +55,9 @@ namespace InterviewSolutions.DP
             List<int> integers = new List<int>() { 1, 2, 3, 4 };
             int index = 0;
             PowerSet set = new PowerSet();
-             var subsets = set.GetSubSets(integers, index);
+             /*var subsets = set.GetSubSets(integers, index)*/;
+            var subsets = set.GetSubSets2(integers);
+
             if (subsets?.Count > 0)
             {
                 foreach (var subset in subsets)
