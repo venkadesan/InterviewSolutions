@@ -1,5 +1,7 @@
-﻿using InterviewSolutions.DP.Problems;
-using System;
+﻿using System;
+using System.Collections.Generic;
+using InterviewSolutions.DP.Problems;
+
 
 namespace InterviewSolutions.DP
 {
@@ -14,8 +16,10 @@ namespace InterviewSolutions.DP
             RobotGrid();
             // magic index problem
             MagicIndex();
-            
-           
+            // Power set
+            PowerSet();
+
+
 
         }
 
@@ -44,6 +48,23 @@ namespace InterviewSolutions.DP
             int[] array = new int[] { -3, -2, -1, 1, 2, 3, 5, 7};
             MagicIndex index = new MagicIndex();
             Console.WriteLine($"{index.MagicFast(array)}");
+        }
+
+        private static void PowerSet()
+        {
+            List<int> integers = new List<int>() { 1, 2, 3, 4 };
+            int index = 0;
+            PowerSet set = new PowerSet();
+             var subsets = set.GetSubSets(integers, index);
+            if (subsets?.Count > 0)
+            {
+                foreach (var subset in subsets)
+                {
+                    Console.WriteLine($"Power set : {string.Join(",", subset.ToArray())}");
+                }
+            }
+
+
         }
     }
 }
