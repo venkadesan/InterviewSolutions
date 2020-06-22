@@ -6,6 +6,8 @@ namespace InterviewSolutions.DP.Problems
 {
     public class PowerSet
     {
+
+        //1. Recursive solution
         #region GetSubSets
         /// <summary>
         ///  Getting subsets of any List of integer
@@ -39,7 +41,7 @@ namespace InterviewSolutions.DP.Problems
         }
 
         #endregion
-        //1. Recursive solution
+        
 
 
     }
