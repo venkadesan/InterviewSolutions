@@ -75,8 +75,8 @@ namespace InterviewSolutions.DP
         {
             Queens queens = new Queens();
             List<int[]> results = new List<int[]>();
-            int[] Columns = new int[8] {1,2,3,4,5,6,7,8 };
-            int row = 0;
+            int[] Columns = new int[8] {0,1,2,3,4,5,6,7};
+            int row =0 ;
             queens.placeQueens(row, Columns, results);
         }
     }
