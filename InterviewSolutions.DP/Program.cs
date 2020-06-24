@@ -18,12 +18,13 @@ namespace InterviewSolutions.DP
             MagicIndex();
             // Power set
             PowerSet();
+            // Placing queen
+            PlaceQueen();
+
 
 
 
         }
-
-
         private static void TripleStep()
         {
             //1.Triple steps
@@ -45,7 +46,7 @@ namespace InterviewSolutions.DP
 
         private static void MagicIndex()
         {
-            int[] array = new int[] { -3, -2, -1, 1, 2, 3, 5, 7};
+            int[] array = new int[] { -3, -2, -1, 1, 2, 3, 5, 7 };
             MagicIndex index = new MagicIndex();
             Console.WriteLine($"{index.MagicFast(array)}");
         }
@@ -55,7 +56,8 @@ namespace InterviewSolutions.DP
             List<int> integers = new List<int>() { 1, 2, 3, 4 };
             int index = 0;
             PowerSet set = new PowerSet();
-             /*var subsets = set.GetSubSets(integers, index)*/;
+            /*var subsets = set.GetSubSets(integers, index)*/
+            ;
             var subsets = set.GetSubSets2(integers);
 
             if (subsets?.Count > 0)
@@ -67,6 +69,15 @@ namespace InterviewSolutions.DP
             }
 
 
+        }
+
+        private static void PlaceQueen()
+        {
+            Queens queens = new Queens();
+            List<int[]> results = new List<int[]>();
+            int[] Columns = new int[8] {1,2,3,4,5,6,7,8 };
+            int row = 0;
+            queens.placeQueens(row, Columns, results);
         }
     }
 }
