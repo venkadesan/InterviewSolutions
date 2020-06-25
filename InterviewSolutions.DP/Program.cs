@@ -22,6 +22,8 @@ namespace InterviewSolutions.DP
             PlaceQueen();
             // Paren
             Paren();
+            // Tower of hanoi problem
+            Tower();
 
         }
         private static void TripleStep()
@@ -92,5 +94,12 @@ namespace InterviewSolutions.DP
                 }
             }
         }
+
+        private static void Tower()
+        {
+            Towers towers = new Towers();
+            towers.MoveTowers();
+        }
+
     }
 }
