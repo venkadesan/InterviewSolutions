@@ -20,9 +20,8 @@ namespace InterviewSolutions.DP
             PowerSet();
             // Placing queen
             PlaceQueen();
-
-
-
+            // Paren
+            Paren();
 
         }
         private static void TripleStep()
@@ -75,9 +74,23 @@ namespace InterviewSolutions.DP
         {
             Queens queens = new Queens();
             List<int[]> results = new List<int[]>();
-            int[] Columns = new int[8] {0,1,2,3,4,5,6,7};
-            int row =0 ;
+            int[] Columns = new int[8] { 0, 1, 2, 3, 4, 5, 6, 7 };
+            int row = 0;
             queens.placeQueens(row, Columns, results);
-        } 
+        }
+
+        private static void Paren()
+        {
+            Parens paren = new Parens();
+            int count = 3;
+            var result = paren.GeneateParen(count);
+            if (result != null && result.Count > 0)
+            {
+                foreach (var res in result)
+                {
+                    Console.WriteLine($"res is {res}");
+                }
+            }
+        }
     }
 }
