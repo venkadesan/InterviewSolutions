@@ -27,6 +27,9 @@ namespace InterviewSolutions.DP
             // Recursive multiply
             RecursiveMultiply();
 
+            // Permutation without duplicates
+            PermutationsWithoutDups();
+
         }
         private static void TripleStep()
         {
@@ -108,7 +111,21 @@ namespace InterviewSolutions.DP
             Multiply multiply = new Multiply();
             int n1 = 8;
             int n2 = 7;
-            Console.WriteLine($"Recursive Multiplication {multiply.RecuriveMultiply(n1,n2)}");
+            Console.WriteLine($"Recursive Multiplication {multiply.RecuriveMultiply(n1, n2)}");
+        }
+
+        private static void PermutationsWithoutDups()
+        {
+            PermutationsWithoutDups perms = new PermutationsWithoutDups();
+            string str = "abc";
+            var permResult = perms.GetPerms(str);
+            if (permResult != null && permResult.Count > 0)
+            {
+                foreach (var perm in permResult)
+                {
+                    Console.WriteLine($"Perm {perm}");
+                }
+            }
         }
 
     }
