@@ -24,6 +24,8 @@ namespace InterviewSolutions.DP
             Paren();
             // Tower of hanoi problem
             Tower();
+            // Recursive multiply
+            RecursiveMultiply();
 
         }
         private static void TripleStep()
@@ -99,6 +101,14 @@ namespace InterviewSolutions.DP
         {
             Towers towers = new Towers();
             towers.MoveTowers();
+        }
+
+        private static void RecursiveMultiply()
+        {
+            Multiply multiply = new Multiply();
+            int n1 = 8;
+            int n2 = 7;
+            Console.WriteLine($"Recursive Multiplication {multiply.RecuriveMultiply(n1,n2)}");
         }
 
     }
