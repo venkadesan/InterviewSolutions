@@ -30,6 +30,9 @@ namespace InterviewSolutions.DP
             // Permutation without duplicates
             PermutationsWithoutDups();
 
+            // Permutation with duplications
+            PermutationsWithDups();
+
         }
         private static void TripleStep()
         {
@@ -126,6 +129,22 @@ namespace InterviewSolutions.DP
                     Console.WriteLine($"Perm {perm}");
                 }
             }
+        }
+
+        private static void PermutationsWithDups()
+        {
+
+            PermutationsWithDups perms = new PermutationsWithDups();
+            string str = "abc";
+            var permResult = perms.GetPerms(str);
+            if (permResult != null && permResult.Count > 0)
+            {
+                foreach (var perm in permResult)
+                {
+                    Console.WriteLine($"Perm {perm}");
+                }
+            }
+
         }
 
     }
