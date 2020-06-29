@@ -36,8 +36,13 @@ namespace InterviewSolutions.DP
             StackOfBoxes();
             // Boolean evaluation
             BoolEval();
+            // Paint fill
+            PaintFill();
 
         }
+
+
+        #region problems
         private static void TripleStep()
         {
             //1.Triple steps
@@ -163,7 +168,7 @@ namespace InterviewSolutions.DP
             Console.WriteLine($"Max Height:{ stackBoxes.maxHeight(boxes)}");
         }
 
-        public static void BoolEval()
+        private static void BoolEval()
         {
             BooleanEvaluation eval = new BooleanEvaluation();
             string expression = "1^0|0|1";
@@ -173,5 +178,16 @@ namespace InterviewSolutions.DP
             memo = new Dictionary<string, int>();
             Console.WriteLine($"number of ways  {eval.countEval(expression2, true, memo) }");
         }
+
+        private static void PaintFill()
+        {
+            PaintFill fill = new PaintFill();
+            Color[,] colors = new Color[,] { { Color.Black, Color.Whilte }, { Color.Black, Color.Whilte } };
+            int row = 0;
+            int column = 0;
+            fill.CanPaintFill(colors, row, column, Color.Yellow);
+        }
+        #endregion
+
     }
 }
