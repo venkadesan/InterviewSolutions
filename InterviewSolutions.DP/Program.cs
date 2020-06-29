@@ -39,6 +39,9 @@ namespace InterviewSolutions.DP
             // Paint fill
             PaintFill();
 
+            // Coin Change
+            CoinChange();
+
         }
 
 
@@ -187,6 +190,13 @@ namespace InterviewSolutions.DP
             int column = 0;
             fill.CanPaintFill(colors, row, column, Color.Yellow);
         }
+
+        private static void CoinChange()
+        {
+            Coins coin = new Coins();
+            Console.WriteLine($"number of possible ways to make change { coin.MakeChange(100)}");
+        }
+
         #endregion
 
     }
