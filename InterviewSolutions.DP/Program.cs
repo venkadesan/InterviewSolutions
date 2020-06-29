@@ -34,6 +34,8 @@ namespace InterviewSolutions.DP
             PermutationsWithDups();
             // Stack of Boxes
             StackOfBoxes();
+            // Boolean evaluation
+            BoolEval();
 
         }
         private static void TripleStep()
@@ -155,10 +157,21 @@ namespace InterviewSolutions.DP
             StackofBoxes stackBoxes = new StackofBoxes();
 
             var boxes = new List<Box>();
-            boxes.Add(new Box(2,4,5));
-            boxes.Add(new Box(1,3,4));
-            boxes.Add(new Box(2,1,4));
+            boxes.Add(new Box(2, 4, 5));
+            boxes.Add(new Box(1, 3, 4));
+            boxes.Add(new Box(2, 1, 4));
             Console.WriteLine($"Max Height:{ stackBoxes.maxHeight(boxes)}");
+        }
+
+        public static void BoolEval()
+        {
+            BooleanEvaluation eval = new BooleanEvaluation();
+            string expression = "1^0|0|1";
+            string expression2 = "0&0&0&1^1|0";
+            Dictionary<string, int> memo = new Dictionary<string, int>();
+            Console.WriteLine($"number of ways  {eval.countEval(expression, false, memo) }");
+            memo = new Dictionary<string, int>();
+            Console.WriteLine($"number of ways  {eval.countEval(expression2, true, memo) }");
         }
     }
 }

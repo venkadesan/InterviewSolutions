@@ -18,7 +18,7 @@ namespace InterviewSolutions.DP.Problems
             {
                 char c = s[i];
                 string left = s.Substring(0, i);
-                string right = s.Substring(i + 1, s.Length);
+                string right = s.Substring(i + 1);
                 int leftTrue = countEval(left, true, memo);
                 int leftFalse = countEval(left, false, memo);
                 int rightTrue = countEval(right, true, memo);
@@ -27,7 +27,7 @@ namespace InterviewSolutions.DP.Problems
                 int totalTrue = 0;
                 if (c == '^')
                 {
-                    totalTrue = leftTrue + rightFalse + leftFalse + rightTrue;
+                    totalTrue = leftTrue * rightFalse + leftFalse * rightTrue;
                 }
                 else if (c == '&')
                 {
@@ -35,11 +35,11 @@ namespace InterviewSolutions.DP.Problems
                 }
                 else if (c == '|')
                 {
-                    totalTrue = leftTrue * rightTrue +
-                                leftFalse * rightTrue +
-                                leftTrue * rightFalse;
+                    totalTrue = (leftTrue * rightTrue) +
+                                (leftFalse * rightTrue) +
+                                (leftTrue * rightFalse);
                 }
-                int subWays = result ? totalTrue : total = totalTrue;
+                int subWays = result ? totalTrue : total - totalTrue;
                 ways += subWays;
 
             }
