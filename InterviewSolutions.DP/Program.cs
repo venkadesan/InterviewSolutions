@@ -32,6 +32,8 @@ namespace InterviewSolutions.DP
 
             // Permutation with duplications
             PermutationsWithDups();
+            // Stack of Boxes
+            StackOfBoxes();
 
         }
         private static void TripleStep()
@@ -147,5 +149,16 @@ namespace InterviewSolutions.DP
 
         }
 
+
+        private static void StackOfBoxes()
+        {
+            StackofBoxes stackBoxes = new StackofBoxes();
+
+            var boxes = new List<Box>();
+            boxes.Add(new Box(2,4,5));
+            boxes.Add(new Box(1,3,4));
+            boxes.Add(new Box(2,1,4));
+            Console.WriteLine($"Max Height:{ stackBoxes.maxHeight(boxes)}");
+        }
     }
 }
