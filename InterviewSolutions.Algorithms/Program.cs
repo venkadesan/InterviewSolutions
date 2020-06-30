@@ -13,6 +13,9 @@ namespace InterviewSolutions.Algorithms
             RotatedArray();
             // Sorted Merge
             SortedMerge();
+            // Group Anagrams
+            GroupAnagrams();
+           
         }
 
 
@@ -55,6 +58,17 @@ namespace InterviewSolutions.Algorithms
             int[] b = new int[5] { 6, 7, 8, 9, 10 };
             SortedMerge merge = new SortedMerge();
             merge.merge(a, b, 5, 5);
+        }
+
+        private static void GroupAnagrams()
+        {
+            GroupAnagrams anagrams = new GroupAnagrams();
+            string[] array = new string[] { "acre", "race", "care" };
+            anagrams.Sort(array);
+            foreach (string str in array)
+            {
+                Console.WriteLine($"Group Anagrams {str}");
+            }
         }
     }
 }
