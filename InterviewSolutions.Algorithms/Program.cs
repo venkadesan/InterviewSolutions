@@ -11,6 +11,8 @@ namespace InterviewSolutions.Algorithms
             SortingAlgorithms();
             // Searching in Rotated Array
             RotatedArray();
+            // Sorted Merge
+            SortedMerge();
         }
 
 
@@ -39,6 +41,20 @@ namespace InterviewSolutions.Algorithms
             int numberToFind = 2;
             Console.WriteLine($"Searching in rotated array {array.search(a, leftIndex, rightIndex, numberToFind)}");
 
+        }
+
+        private static void SortedMerge()
+        {
+            int[] a = new int[10];
+
+            for (int i = 0; i < 5; i++)
+            {
+                a[i] = i;
+            }
+
+            int[] b = new int[5] { 6, 7, 8, 9, 10 };
+            SortedMerge merge = new SortedMerge();
+            merge.merge(a, b, 5, 5);
         }
     }
 }
