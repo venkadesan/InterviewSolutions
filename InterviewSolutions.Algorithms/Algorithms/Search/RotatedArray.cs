@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace InterviewSolutions.Algorithms.Algorithms.Search
+namespace InterviewSolutions.Algorithms.Search
 {
     public class RotatedArray
     {
