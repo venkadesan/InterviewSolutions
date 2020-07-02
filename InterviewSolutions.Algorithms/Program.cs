@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using InterviewSolutions.Algorithms.Sorting;
 using InterviewSolutions.Algorithms.Search;
 namespace InterviewSolutions.Algorithms
@@ -17,6 +18,9 @@ namespace InterviewSolutions.Algorithms
             GroupAnagrams();
             // Sorted Search
             SortedSearch();
+
+            // Sparse Search
+            SparseSearch();
         }
 
 
@@ -79,6 +83,15 @@ namespace InterviewSolutions.Algorithms
             Listy list = new Listy(new System.Collections.Generic.List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 });
             var numToSearch = 3;
             Console.WriteLine($" Number to Search: {numToSearch}, {search.search(list, numToSearch)}");
+        }
+
+
+        private static void SparseSearch()
+        {
+            SparseSearch search = new SparseSearch();
+            List<string> strings = new List<string>() { "at", "", "", "", "ball", "", "", "car", "", "", "dad", "", "" };
+            string strToSearch = "ball";
+            Console.WriteLine($"Index of searched string { search.Search(strings.ToArray(), strToSearch)}");
         }
     }
 }
