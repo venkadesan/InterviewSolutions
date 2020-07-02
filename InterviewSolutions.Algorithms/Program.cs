@@ -91,7 +91,7 @@ namespace InterviewSolutions.Algorithms
             SparseSearch search = new SparseSearch();
             List<string> strings = new List<string>() { "at", "", "", "", "ball", "", "", "car", "", "", "dad", "", "" };
             string strToSearch = "ball";
-            Console.WriteLine($"Index of searched string { search.Search(strings.ToArray(), strToSearch)}");
+            Console.WriteLine($"Index of searched string Index { search.Search(strings.ToArray(), strToSearch)}");
         }
     }
 }

@@ -20,13 +20,13 @@ namespace InterviewSolutions.Algorithms.Search
 
         private int Search(string[] strings, string str, int first, int last)
         {
-            if (first < last) return -1;
+            if (first > last) return -1;
 
             int mid = (last + first) / 2;
 
             if (string.IsNullOrEmpty(strings[mid]))
             {
-                int left = mid = 1;
+                int left = mid - 1;
                 int right = mid + 1;
 
                 while (true)
