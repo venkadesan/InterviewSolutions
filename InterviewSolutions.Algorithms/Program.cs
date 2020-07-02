@@ -15,7 +15,8 @@ namespace InterviewSolutions.Algorithms
             SortedMerge();
             // Group Anagrams
             GroupAnagrams();
-           
+            // Sorted Search
+            SortedSearch();
         }
 
 
@@ -69,6 +70,15 @@ namespace InterviewSolutions.Algorithms
             {
                 Console.WriteLine($"Group Anagrams {str}");
             }
+        }
+
+
+        private static void SortedSearch()
+        {
+            SortedSearch search = new SortedSearch();
+            Listy list = new Listy(new System.Collections.Generic.List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 });
+            var numToSearch = 3;
+            Console.WriteLine($" Number to Search: {numToSearch}, {search.search(list, numToSearch)}");
         }
     }
 }

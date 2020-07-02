@@ -13,7 +13,7 @@ namespace InterviewSolutions.Algorithms.Search
             Dictionary<string, List<string>> mapList = new Dictionary<string, List<string>>();
             if (array != null && array.Length > 0)
             {
-                foreach (string s in array)
+                foreach (string s in array)                                                                                                                        
                 {
                     string key = sortChars(s);
                     if (!mapList.ContainsKey(key))
