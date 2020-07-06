@@ -18,9 +18,11 @@ namespace InterviewSolutions.Algorithms
             GroupAnagrams();
             // Sorted Search
             SortedSearch();
-
             // Sparse Search
             SparseSearch();
+            // Finding duplicates
+            FindDuplicates();
+
         }
 
 
@@ -92,6 +94,26 @@ namespace InterviewSolutions.Algorithms
             List<string> strings = new List<string>() { "at", "", "", "", "ball", "", "", "car", "", "", "dad", "", "" };
             string strToSearch = "ball";
             Console.WriteLine($"Index of searched string Index { search.Search(strings.ToArray(), strToSearch)}");
+        }
+
+        private static void FindDuplicates()
+        {
+            Duplicates dups = new Duplicates();
+            int CAPACITY = 32000;
+            int[] array = new int[CAPACITY];
+            int DUPLICATE_RANGE = 10;
+            int j = 0;
+            for (int i = 0; i < CAPACITY; i++)
+            {
+                if (i < CAPACITY - DUPLICATE_RANGE)
+                    array[i] = i;
+                else
+                {
+                    array[i] = j;
+                    j++;
+                }
+            }
+            dups.checkDuplicates(array, CAPACITY);
         }
     }
 }

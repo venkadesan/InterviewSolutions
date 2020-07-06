@@ -9,9 +9,9 @@ namespace InterviewSolutions.Algorithms.Search
     public class Duplicates
     {
 
-        public void checkDuplicates(int[] array)
+        public void checkDuplicates(int[] array,int size)
         {
-            BitSet bs = new BitSet(3200);
+            BitSet bs = new BitSet(size);
             for (int i = 0; i < array.Length; i++)
             {
                 int num = array[i];
@@ -35,7 +35,7 @@ namespace InterviewSolutions.Algorithms.Search
 
             public BitSet(int size)
             {
-                bitSet = new int[size >> 5 + 1];
+                bitSet = new int[(size >> 5) + 1];
             }
 
             public bool get(int pos)
