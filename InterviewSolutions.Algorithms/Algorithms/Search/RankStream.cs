@@ -7,4 +7,6 @@ namespace InterviewSolutions.Algorithms.Search
     public class RankStream
     {
 
+
     }
+}
