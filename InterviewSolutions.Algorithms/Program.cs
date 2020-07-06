@@ -21,7 +21,9 @@ namespace InterviewSolutions.Algorithms
             // Sparse Search
             SparseSearch();
             // Finding duplicates
-            FindDuplicates();
+            //FindDuplicates();
+            // Sorted Matrix search
+            SortedMatrixSearch();
 
         }
 
@@ -114,6 +116,19 @@ namespace InterviewSolutions.Algorithms
                 }
             }
             dups.checkDuplicates(array, CAPACITY);
+        }
+
+
+        private static void SortedMatrixSearch()
+        {
+            SortedMatrixSearch search = new SortedMatrixSearch();
+            int[,] matrix = new int[,] { {15,20,40,85 },
+                                          {20,35,80,90 },
+                                          {30,55,95,105 },
+                                          {40,80,100,120 } };
+            int elementToSearch = 95;
+            Console.WriteLine($"{search.findElement(matrix, elementToSearch)}");
+
         }
     }
 }

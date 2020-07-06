@@ -11,8 +11,8 @@ namespace InterviewSolutions.Algorithms.Search
         public bool findElement(int[,] matrix, int elem)
         {
             int row = 0;
-            int col = matrix.GetLength(0) - 1;
-            while (row < matrix.Length && col >= 0)
+            int col = matrix.GetLength(1) - 1;
+            while (row < matrix.GetLength(0) && col >= 0)
             {
                 if (matrix[row, col] == elem)
                 {
