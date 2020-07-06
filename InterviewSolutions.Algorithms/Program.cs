@@ -129,6 +129,10 @@ namespace InterviewSolutions.Algorithms
             int elementToSearch = 95;
             Console.WriteLine($"{search.findElement(matrix, elementToSearch)}");
 
+            // coordinate.
+            var coordinate = search.findElelement2(matrix, elementToSearch);
+            Console.WriteLine($" row: {coordinate.row} col {coordinate.col}");
+
         }
     }
 }
