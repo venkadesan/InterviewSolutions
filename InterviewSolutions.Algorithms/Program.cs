@@ -26,6 +26,8 @@ namespace InterviewSolutions.Algorithms
             SortedMatrixSearch();
             // Rank Stream
             RankStream();
+            // Peak and Valley problem
+            PeakAndValley();
 
         }
 
@@ -140,9 +142,18 @@ namespace InterviewSolutions.Algorithms
         private static void RankStream()
         {
             var stream = new RankStream();
-            var data = new int[] { 5,1,5,4,4,5,9,7,13,3 };
+            var data = new int[] { 5, 1, 5, 4, 4, 5, 9, 7, 13, 3 };
             int numberToFindRank = 4;
             Console.WriteLine($"Number :{numberToFindRank}  Rank: {stream.GetRank(data, numberToFindRank)}");
+        }
+
+
+        private static void PeakAndValley()
+        {
+            var valley = new PeakAndValley();
+            int[] array = new int[] { 5, 3, 1, 2, 3 };
+            valley.SortValleyPeak(array);
+
         }
     }
 }
