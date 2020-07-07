@@ -24,6 +24,8 @@ namespace InterviewSolutions.Algorithms
             //FindDuplicates();
             // Sorted Matrix search
             SortedMatrixSearch();
+            // Rank Stream
+            RankStream();
 
         }
 
@@ -133,6 +135,14 @@ namespace InterviewSolutions.Algorithms
             var coordinate = search.findElelement2(matrix, elementToSearch);
             Console.WriteLine($" row: {coordinate.row} col {coordinate.col}");
 
+        }
+
+        private static void RankStream()
+        {
+            var stream = new RankStream();
+            var data = new int[] { 5,1,5,4,4,5,9,7,13,3 };
+            int numberToFindRank = 4;
+            Console.WriteLine($"Number :{numberToFindRank}  Rank: {stream.GetRank(data, numberToFindRank)}");
         }
     }
 }
