@@ -7,6 +7,20 @@ namespace InterviewSolutions.Array
     {
         static void Main(string[] args)
         {
+
+
+            // Palindrome
+            Plaindrome();
+            // one Way
+            OneAway();
+            // Compress String problem
+            CompressString();
+
+        }
+
+
+        private static void Plaindrome()
+        {
             Console.WriteLine("Is a Palindrome");
             Palindrome pal = new Palindrome();
             string palindromCharacter = Console.ReadLine();
@@ -19,6 +33,11 @@ namespace InterviewSolutions.Array
                 Console.Read();
             }
 
+        }
+
+
+        private static void OneAway()
+        {
             OneAway oAway = new OneAway();
             if (oAway.oneEditAway("pale", "pae"))
                 Console.Write("Both Strings are one edit away");
@@ -31,12 +50,17 @@ namespace InterviewSolutions.Array
             }
             else
                 Console.Write("Both Strings are Not one Edit Away");
+        }
 
 
+        private static void CompressString()
+        {
             // String compression problem.
             CompressString str = new CompressString();
             string strToProcess = "aabccccccaaa";
             var compressed = str.Compress(strToProcess);
+
         }
+
     }
 }
