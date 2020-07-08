@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using InterviewSolutions.Array.StringProblems;
 
 namespace InterviewSolutions.Array
 {
@@ -16,6 +17,8 @@ namespace InterviewSolutions.Array
             // Compress String problem
             CompressString();
 
+            // isUnique
+            isUnique();
         }
 
 
@@ -59,6 +62,16 @@ namespace InterviewSolutions.Array
             CompressString str = new CompressString();
             string strToProcess = "aabccccccaaa";
             var compressed = str.Compress(strToProcess);
+
+        }
+
+
+        private static void isUnique()
+        {
+            UniqueChars unique = new UniqueChars();
+            string str = "abcdefghig";
+            Console.WriteLine($" {unique.isUniqueChars(str)}");
+            Console.WriteLine($"{unique.isUniqueChars2(str)}");
 
         }
 
