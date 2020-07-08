@@ -18,9 +18,10 @@ namespace InterviewSolutions.Array
             CompressString();
             // isUnique
             isUnique();
-
             // is Permutation
             isPermutation();
+            // Urlify
+            Urlify();
 
         }
 
@@ -85,6 +86,16 @@ namespace InterviewSolutions.Array
             string s2 = "cab";
 
             Console.WriteLine($"{perm.IsPermutation(s1, s2)}");
+        }
+
+        private static void Urlify()
+        {
+            var uRLify = new URLify();
+            string str = "Mr John Smith    ";
+            int length = 13;
+            char[] chars = str.ToCharArray();
+            uRLify.replaceSpaces(chars, length);
+            Console.WriteLine($"After urlify {new string(chars)}");
         }
 
     }
