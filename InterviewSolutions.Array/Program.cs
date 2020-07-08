@@ -16,9 +16,12 @@ namespace InterviewSolutions.Array
             OneAway();
             // Compress String problem
             CompressString();
-
             // isUnique
             isUnique();
+
+            // is Permutation
+            isPermutation();
+
         }
 
 
@@ -73,6 +76,15 @@ namespace InterviewSolutions.Array
             Console.WriteLine($" {unique.isUniqueChars(str)}");
             Console.WriteLine($"{unique.isUniqueChars2(str)}");
 
+        }
+
+        private static void isPermutation()
+        {
+            Permutation perm = new Permutation();
+            string s1 = "abc";
+            string s2 = "cab";
+
+            Console.WriteLine($"{perm.IsPermutation(s1, s2)}");
         }
 
     }
