@@ -25,6 +25,9 @@ namespace InterviewSolutions.Array
             //Rotate Matrix
             RotateMatrix();
 
+            //Zero Matrix problem
+            ZeroMatrix();
+
         }
 
 
@@ -119,6 +122,15 @@ namespace InterviewSolutions.Array
             rotateMatrix.Rotate(matrix);
 
 
+        }
+
+        private static void ZeroMatrix()
+        {
+            ZeroMatrix zeroMatrix = new ZeroMatrix();
+            var matrix = new int?[,] { {1,2,3},
+                                       {4,0,6}
+                                     };
+            zeroMatrix.setZeros(matrix);
         }
 
     }
