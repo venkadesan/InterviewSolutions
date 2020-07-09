@@ -22,6 +22,8 @@ namespace InterviewSolutions.Array
             Urlify();
             // isRotation
             Rotation();
+            //Rotate Matrix
+            RotateMatrix();
 
         }
 
@@ -104,6 +106,19 @@ namespace InterviewSolutions.Array
             string rotatedString = "bottlewater";
             Rotation rotation = new Rotation();
             Console.WriteLine($"{rotation.IsRotation(s1, rotatedString)}");
+        }
+
+        private static void RotateMatrix()
+        {
+            var rotateMatrix = new RotateMatrix();
+            int[,] matrix = new int[,] { { 1, 2, 3 },
+                                          { 4, 5,6 },
+                                          { 7, 8,9 }
+                                        };
+
+            rotateMatrix.Rotate(matrix);
+
+
         }
 
     }

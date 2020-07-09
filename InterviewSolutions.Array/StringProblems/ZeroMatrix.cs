@@ -4,7 +4,8 @@ using System.Text;
 
 namespace InterviewSolutions.Array.StringProblems
 {
-    class ZeroMatrix
+    public  class ZeroMatrix
     {
+
     }
 }
