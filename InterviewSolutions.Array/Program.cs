@@ -22,6 +22,8 @@ namespace InterviewSolutions.Array
             isPermutation();
             // Urlify
             Urlify();
+            // isRotation
+            Rotation();
 
         }
 
@@ -96,6 +98,14 @@ namespace InterviewSolutions.Array
             char[] chars = str.ToCharArray();
             uRLify.replaceSpaces(chars, length);
             Console.WriteLine($"After urlify {new string(chars)}");
+        }
+
+        private static void Rotation()
+        {
+            string s1 = "waterbottle";
+            string rotatedString = "bottlewater";
+            Rotation rotation = new Rotation();
+            Console.WriteLine($"{rotation.IsRotation(s1, rotatedString)}");
         }
 
     }
