@@ -8,8 +8,6 @@ namespace InterviewSolutions.Array
     {
         static void Main(string[] args)
         {
-
-
             // Palindrome
             Plaindrome();
             // one Way
