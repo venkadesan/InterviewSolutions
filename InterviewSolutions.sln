@@ -25,9 +25,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InterviewSolutions.OOP", "I
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InterviewSolutions.DP", "InterviewSolutions.DP\InterviewSolutions.DP.csproj", "{D4DB92A5-B052-4B74-B279-3F5C07E0DC80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterviewSolution.Medium", "InterviewSolution.Medium\InterviewSolution.Medium.csproj", "{9A6B94DE-6030-478D-AB42-50A9118C6F76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InterviewSolution.Medium", "InterviewSolution.Medium\InterviewSolution.Medium.csproj", "{9A6B94DE-6030-478D-AB42-50A9118C6F76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterviewSolution.Hard", "InterviewSolution.Hard\InterviewSolution.Hard.csproj", "{FF4EDCC1-C26C-4CEA-B26E-072BC33D2737}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InterviewSolution.Hard", "InterviewSolution.Hard\InterviewSolution.Hard.csproj", "{FF4EDCC1-C26C-4CEA-B26E-072BC33D2737}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterviewSolutions.BitManipulation", "InterviewSolutions.BitManipulation\InterviewSolutions.BitManipulation.csproj", "{4EED46EB-2984-4252-84F2-4D71F1A7225F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterviewSolutions.MathLogicPuzzles", "InterviewSolutions.MathLogicPuzzles\InterviewSolutions.MathLogicPuzzles.csproj", "{B3447BD5-9A14-460A-A114-4AF44B8C06F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +91,14 @@ Global
 		{FF4EDCC1-C26C-4CEA-B26E-072BC33D2737}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF4EDCC1-C26C-4CEA-B26E-072BC33D2737}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF4EDCC1-C26C-4CEA-B26E-072BC33D2737}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EED46EB-2984-4252-84F2-4D71F1A7225F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EED46EB-2984-4252-84F2-4D71F1A7225F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EED46EB-2984-4252-84F2-4D71F1A7225F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EED46EB-2984-4252-84F2-4D71F1A7225F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3447BD5-9A14-460A-A114-4AF44B8C06F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3447BD5-9A14-460A-A114-4AF44B8C06F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3447BD5-9A14-460A-A114-4AF44B8C06F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3447BD5-9A14-460A-A114-4AF44B8C06F7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
