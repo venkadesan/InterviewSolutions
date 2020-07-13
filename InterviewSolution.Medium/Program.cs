@@ -15,7 +15,9 @@ namespace InterviewSolution.Medium
             TwoLineIntersection();
             // Factorial Zeroes
             FactorialZeroes();
-          
+            // Smallest difference in the array
+            smallestDifference();
+
         }
 
         private static void NumberSwap()
@@ -61,6 +63,16 @@ namespace InterviewSolution.Medium
             FactorialZeros factZeroes = new FactorialZeros();
             int number = 19;
             Console.WriteLine($" {factZeroes.countFactZeroes(number)}");
+
+        }
+
+
+        private static void smallestDifference()
+        {
+            SmallestDifference smallDiff = new SmallestDifference();
+            int[] array1 = new int[] { 1, 3, 15, 11, 2 };
+            int[] array2 = new int[] { 23, 127, 235, 19, 8 };
+            Console.WriteLine($"The smallest difference in the array :  {smallDiff.findSmallestDifference(array1, array2)}");
 
         }
     }

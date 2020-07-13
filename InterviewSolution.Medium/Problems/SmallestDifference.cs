@@ -21,7 +21,7 @@ namespace InterviewSolution.Medium.Problems
                     diff = Math.Abs(array1[a] - array2[b]);
                 }
                 // Move smaller value.
-                if (array1[a] > array2[b])
+                if (array1[a] < array2[b])
                 {
                     a++;
                 }
