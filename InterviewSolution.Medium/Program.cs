@@ -19,6 +19,8 @@ namespace InterviewSolution.Medium
             smallestDifference();
             // Get max number
             GetMaxNumber();
+            // Convert Number to it's equal english words.
+            EnglishInt();
 
         }
 
@@ -84,6 +86,13 @@ namespace InterviewSolution.Medium
             int number2 = 10;
             NumberMax max = new NumberMax();
             Console.WriteLine($" Max number between {number1} and {number2} is : {max.GetMaxNumber(number1, number2)}");
+        }
+
+        private static void EnglishInt()
+        {
+            var convertUtil = new EnglishInt();
+            int num = 100000;
+            Console.WriteLine($"{convertUtil.Convert(num)}");
         }
     }
 }

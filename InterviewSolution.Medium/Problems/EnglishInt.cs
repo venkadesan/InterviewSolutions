@@ -26,14 +26,19 @@ namespace InterviewSolution.Medium.Problems
             }
 
             LinkedList<string> parts = new LinkedList<string>();
+            int chunkCount = 0;
             while (num > 0)
             {
                 if (num % 1000 != 0)
                 {
+                    string chunk = convertChunk(num%1000) + "" +  bigs[chunkCount];
+                    parts.AddFirst(chunk);
                 }
+                num /= 1000;
+                chunkCount++;
             }
 
-            return string.Empty;
+            return listToString(parts);
         }
 
         private string convertChunk(int number)
