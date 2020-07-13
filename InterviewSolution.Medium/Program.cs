@@ -11,6 +11,9 @@ namespace InterviewSolution.Medium
             NumberSwap();
             // Word Frequencies
             WordFrequencies();
+
+            // Two line intersection
+            TwoLineIntersection();
         }
 
         private static void NumberSwap()
@@ -33,6 +36,23 @@ namespace InterviewSolution.Medium
             // solution 2
             var wordfreq = freq.setupDictionary(book, word);
             Console.WriteLine($"word Frequencies Solution 2  {freq.GetFrequency(wordfreq, word)}");
+        }
+
+
+        private static void TwoLineIntersection()
+        {
+            LineIntersection intersectUtil = new LineIntersection();
+
+            Point start1 = new Point(1, 4);
+            Point end1 = new Point(4, 5);
+            Point start2 = new Point(1, 5);
+            Point end2 = new Point(4, 4);
+            var interesectPoint = intersectUtil.Intersection(start1, end1, start2, end2);
+            if (interesectPoint != null)
+            {
+                Console.WriteLine($"is two line intersect ? :  {interesectPoint.x} {interesectPoint.y}");
+            }
+
         }
     }
 }
