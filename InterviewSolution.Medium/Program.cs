@@ -91,7 +91,7 @@ namespace InterviewSolution.Medium
         private static void EnglishInt()
         {
             var convertUtil = new EnglishInt();
-            int num = 100000;
+            int num = 1234567890;
             Console.WriteLine($"{convertUtil.Convert(num)}");
         }
     }

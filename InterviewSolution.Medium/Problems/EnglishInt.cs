@@ -68,15 +68,19 @@ namespace InterviewSolution.Medium.Problems
         private string listToString(LinkedList<string> parts)
         {
             StringBuilder sb = new StringBuilder();
-            while (parts.Count > 1)
+            if (parts != null && parts.Count > 0)
             {
-                sb.Append(parts.First);
-
-                sb.Append(" ");
+                while (parts.Count > 1)
+                {
+                    sb.Append(parts.First.Value);
+                    parts.RemoveFirst();
+                    sb.Append(" ");
+                }
+                sb.Append(parts.First.Value);
+                parts.RemoveFirst();
+                return sb.ToString();
             }
-            sb.Append(parts.First);
-            parts.RemoveFirst();
-            return sb.ToString();
+            return string.Empty;
         }
 
     }
