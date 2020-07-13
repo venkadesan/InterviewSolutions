@@ -17,6 +17,8 @@ namespace InterviewSolution.Medium
             FactorialZeroes();
             // Smallest difference in the array
             smallestDifference();
+            // Get max number
+            GetMaxNumber();
 
         }
 
@@ -74,6 +76,14 @@ namespace InterviewSolution.Medium
             int[] array2 = new int[] { 23, 127, 235, 19, 8 };
             Console.WriteLine($"The smallest difference in the array :  {smallDiff.findSmallestDifference(array1, array2)}");
 
+        }
+
+        private static void GetMaxNumber()
+        {
+            int number1 = 3;
+            int number2 = 10;
+            NumberMax max = new NumberMax();
+            Console.WriteLine($" Max number between {number1} and {number2} is : {max.GetMaxNumber(number1, number2)}");
         }
     }
 }
