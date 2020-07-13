@@ -11,9 +11,11 @@ namespace InterviewSolution.Medium
             NumberSwap();
             // Word Frequencies
             WordFrequencies();
-
             // Two line intersection
             TwoLineIntersection();
+            // Factorial Zeroes
+            FactorialZeroes();
+          
         }
 
         private static void NumberSwap()
@@ -38,7 +40,6 @@ namespace InterviewSolution.Medium
             Console.WriteLine($"word Frequencies Solution 2  {freq.GetFrequency(wordfreq, word)}");
         }
 
-
         private static void TwoLineIntersection()
         {
             LineIntersection intersectUtil = new LineIntersection();
@@ -52,6 +53,14 @@ namespace InterviewSolution.Medium
             {
                 Console.WriteLine($"is two line intersect ? :  {interesectPoint.x} {interesectPoint.y}");
             }
+
+        }
+
+        private static void FactorialZeroes()
+        {
+            FactorialZeros factZeroes = new FactorialZeros();
+            int number = 19;
+            Console.WriteLine($" {factZeroes.countFactZeroes(number)}");
 
         }
     }
