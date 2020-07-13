@@ -9,6 +9,8 @@ namespace InterviewSolution.Medium
         {
             // Number swapper
             NumberSwap();
+            // Word Frequencies
+            WordFrequencies();
         }
 
         private static void NumberSwap()
@@ -17,6 +19,20 @@ namespace InterviewSolution.Medium
             int a = 9;
             int b = 5;
             swapper.SwapNumber(a, b);
+        }
+
+        private static void WordFrequencies()
+        {
+            WordFrequencies freq = new WordFrequencies();
+            string[] book = new string[] { "test", "test2", "test" };
+            var word = "test";
+
+            // Solution 1
+            Console.WriteLine($"word frequencies solution1 {freq.GetFrequency(book, word)}");
+
+            // solution 2
+            var wordfreq = freq.setupDictionary(book, word);
+            Console.WriteLine($"word Frequencies Solution 2  {freq.GetFrequency(wordfreq, word)}");
         }
     }
 }
