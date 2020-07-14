@@ -21,7 +21,8 @@ namespace InterviewSolution.Medium
             GetMaxNumber();
             // Convert Number to it's equal english words.
             EnglishInt();
-
+            // Tic Tac Won
+            ticTacWon();
         }
 
         private static void NumberSwap()
@@ -93,6 +94,19 @@ namespace InterviewSolution.Medium
             var convertUtil = new EnglishInt();
             int num = 1234567890;
             Console.WriteLine($"{convertUtil.Convert(num)}");
+        }
+
+        private static void ticTacWon()
+        {
+            TicTacWon tacWon = new TicTacWon();
+            Piece[,] board = new Piece[,] { { Piece.Blue,Piece.Red,Piece.Blue },
+                                             { Piece.Blue,Piece.Blue,Piece.Empty },
+                                             { Piece.Blue,Piece.Red, Piece.Blue }};
+            int row = 2;
+            int col = 2;
+            var piece = tacWon.hasWon(board, row, col);
+            Console.WriteLine($"Peice Won {piece}");
+
         }
     }
 }
