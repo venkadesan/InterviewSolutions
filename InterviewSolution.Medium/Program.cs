@@ -23,6 +23,8 @@ namespace InterviewSolution.Medium
             EnglishInt();
             // Tic Tac Won
             ticTacWon();
+            // Operations
+            Operations();
         }
 
         private static void NumberSwap()
@@ -107,6 +109,14 @@ namespace InterviewSolution.Medium
             var piece = tacWon.hasWon(board, row, col);
             Console.WriteLine($"Peice Won {piece}");
 
+        }
+
+        private static void Operations()
+        {
+            int a = 5;
+            int b = 10;
+            Operations ops = new Operations();
+            Console.WriteLine($"Subtracting {a} from {b} is {ops.minus(a, b)}");
         }
     }
 }
