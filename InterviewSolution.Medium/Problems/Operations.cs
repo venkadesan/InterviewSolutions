@@ -18,11 +18,27 @@ namespace InterviewSolution.Medium.Problems
         #region multiplication
         public int multiply(int a, int b)
         {
-            return 0;
+            if (a < b)
+            {
+                return multiply(b, a);
+            }
+            int sum = 0;
+
+            for (int i = abs(b); i > 0; i = minus(i, 1))
+            {
+                sum += a;
+            }
+
+            if (b < 0)
+            {
+                sum = negate(sum);
+            }
+
+            return sum;
         }
         #endregion
 
-
+        #region private methods
         private int negate(int a)
         {
             int neg = 0;
@@ -42,5 +58,19 @@ namespace InterviewSolution.Medium.Problems
 
             return neg;
         }
+
+
+
+        private int abs(int a)
+        {
+            if (a < 0)
+            {
+                return negate(a);
+            }
+            return a;
+        }
+
+        #endregion
+
     }
 }
