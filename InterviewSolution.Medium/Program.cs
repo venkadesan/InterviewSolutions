@@ -119,6 +119,10 @@ namespace InterviewSolution.Medium
             Console.WriteLine($"Subtracting {a} from {b} is {ops.minus(a, b)}");
 
             Console.WriteLine($"Mutliplication {a} from {b} is {ops.multiply(a, b)}");
+
+            Console.WriteLine($"Division {b} from {a} is {ops.divide(b, a)}");
         }
+
+        
     }
 }

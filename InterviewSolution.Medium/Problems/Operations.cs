@@ -7,13 +7,14 @@ namespace InterviewSolution.Medium.Problems
     public class Operations
     {
 
+        #region public methods
+
         #region subtraction
         public int minus(int a, int b)
         {
             return a + negate(b);
         }
         #endregion
-
 
         #region multiplication
         public int multiply(int a, int b)
@@ -37,6 +38,36 @@ namespace InterviewSolution.Medium.Problems
             return sum;
         }
         #endregion
+
+        #region Division
+        public int divide(int a, int b)
+        {
+            if (b == 0)
+            {
+                throw new ArgumentException("ERROR");
+            }
+            int absa = abs(a);
+            int absb = abs(b);
+            int product = 0;
+            int x = 0;
+            while (product + absb <= absa)
+            {
+                product += absb;
+                x++;
+            }
+
+            if ((a < 0 && b < 0) || (a > 0 && b > 0))
+            {
+                return x;
+            }
+            else
+            {
+                return negate(x);
+            }
+        }
+        #endregion
+        #endregion
+
 
         #region private methods
         private int negate(int a)
