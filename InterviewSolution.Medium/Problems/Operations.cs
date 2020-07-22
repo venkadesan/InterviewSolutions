@@ -6,10 +6,22 @@ namespace InterviewSolution.Medium.Problems
 {
     public class Operations
     {
+
+        #region subtraction
         public int minus(int a, int b)
         {
             return a + negate(b);
         }
+        #endregion
+
+
+        #region multiplication
+        public int multiply(int a, int b)
+        {
+            return 0;
+        }
+        #endregion
+
 
         private int negate(int a)
         {
