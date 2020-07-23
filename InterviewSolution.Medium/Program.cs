@@ -30,6 +30,8 @@ namespace InterviewSolution.Medium
             MaxAliveyear();
             // Diving board
             DivingBoard();
+            // BiSectSqures
+            BiSectSqures();
 
         }
 
@@ -164,6 +166,18 @@ namespace InterviewSolution.Medium
                     Console.WriteLine($"Possible ways {way}");
                 }
             }
+        }
+
+        private static void BiSectSqures()
+        {
+            square square = new square(10, 15, 10, 15);
+            square square1 = new square(10, 15, 10, 15);
+            Line line = square1.LineCut(square);
+            if(line!=null)
+            {
+                Console.WriteLine($"Instersecting line slope: {line.slope}  Intercept:{line.yIntercept}");
+            }
+
         }
 
     }
