@@ -153,10 +153,10 @@ namespace InterviewSolution.Medium
         private static void DivingBoard()
         {
             DivingBoard board = new DivingBoard();
-            int k = 10;
-            int shorter = 5;
-            int longer = 6;
-            var ways = board.allLengths(k, shorter, longer);
+            int MaxPlanksofWoods = 10;
+            int shorterWoodLength = 5;
+            int longerWoodLength = 6;
+            var ways = board.PossibleLengths(MaxPlanksofWoods, shorterWoodLength, longerWoodLength);
             if (ways != null && ways.Count > 0)
             {
                 foreach (var way in ways)
