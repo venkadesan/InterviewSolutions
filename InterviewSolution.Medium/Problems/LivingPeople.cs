@@ -33,7 +33,7 @@ namespace InterviewSolution.Medium.Problems
 
         public int[] GetPopulationDeltas(People[] peoples, int min, int max)
         {
-            int[] populationDeltas = new int[(max - min) + 2];
+            int[] populationDeltas = new int[max - min + 2];
             foreach (var people in peoples)
             {
                 int birth = people.birthYear - min;
