@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using InterviewSolution.Medium.Problems;
 
 namespace InterviewSolution.Medium
@@ -25,6 +26,9 @@ namespace InterviewSolution.Medium
             ticTacWon();
             // Operations
             Operations();
+            // Max Alive problem.
+            MaxAliveyear();
+
         }
 
         private static void NumberSwap()
@@ -123,6 +127,26 @@ namespace InterviewSolution.Medium
             Console.WriteLine($"Division {b} from {a} is {ops.divide(b, a)}");
         }
 
-        
+        private static void MaxAliveyear()
+        {
+            LivingPeople people = new LivingPeople();
+            var peoples = new List<People>()
+            {
+                new People(12,15),
+                new People(20,90),
+                new People(01,72),
+                new People(10,98),
+                new People(23,82),
+                new People(13,98),
+                new People(90,98),
+                new People(83,99),
+                new People(75,94)
+            };
+            int minYear = 01;
+            int MaxYear = 99;
+
+            Console.WriteLine($"Max year { people.GetMaxAliveYear(peoples.ToArray(), minYear, MaxYear)}");
+        }
+
     }
 }
