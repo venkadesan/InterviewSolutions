@@ -28,6 +28,8 @@ namespace InterviewSolution.Medium
             Operations();
             // Max Alive problem.
             MaxAliveyear();
+            // Diving board
+            DivingBoard();
 
         }
 
@@ -146,6 +148,22 @@ namespace InterviewSolution.Medium
             int MaxYear = 99;
 
             Console.WriteLine($"Max year { people.GetMaxAliveYear(peoples.ToArray(), minYear, MaxYear)}");
+        }
+
+        private static void DivingBoard()
+        {
+            DivingBoard board = new DivingBoard();
+            int k = 10;
+            int shorter = 5;
+            int longer = 6;
+            var ways = board.allLengths(k, shorter, longer);
+            if (ways != null && ways.Count > 0)
+            {
+                foreach (var way in ways)
+                {
+                    Console.WriteLine($"Possible ways {way}");
+                }
+            }
         }
 
     }
