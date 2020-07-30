@@ -32,6 +32,8 @@ namespace InterviewSolution.Medium
             DivingBoard();
             // BiSectSqures
             BiSectSqures();
+            // Best Lines
+            BestLine();
 
         }
 
@@ -173,10 +175,23 @@ namespace InterviewSolution.Medium
             square square = new square(10, 15, 10, 15);
             square square1 = new square(10, 15, 10, 15);
             Line line = square1.LineCut(square);
-            if(line!=null)
+            if (line != null)
             {
                 Console.WriteLine($"Instersecting line slope: {line.slope}  Intercept:{line.yIntercept}");
             }
+
+        }
+
+        private static void BestLine()
+        {
+            var line = new BestLine();
+            var points = new List<BestLine.GraphPoint>();
+            points.Add(new BestLine.GraphPoint(1.0, 2.0));
+            points.Add(new BestLine.GraphPoint(2.0, 2.0));
+            points.Add(new BestLine.GraphPoint(3.0, 2.0));
+            points.Add(new BestLine.GraphPoint(4.0, 2.0));
+            points.Add(new BestLine.GraphPoint(4.0, 3.0));
+            line.FindBestLine(points.ToArray());
 
         }
 

@@ -64,8 +64,14 @@ namespace InterviewSolution.Medium.Problems
         {
             double key = Line.floorToNearestEpislon(line.slope);
             int count = CountEquivalentLines(linesBySlope[key], line);
-            count += CountEquivalentLines(linesBySlope[key - Line.epsilon], line);
-            count += CountEquivalentLines(linesBySlope[key + Line.epsilon], line);
+            if (linesBySlope.ContainsKey(key - Line.epsilon))
+            {
+                count += CountEquivalentLines(linesBySlope[key - Line.epsilon], line);
+            }
+            if (linesBySlope.ContainsKey(key + Line.epsilon))
+            {
+                count += CountEquivalentLines(linesBySlope[key + Line.epsilon], line);
+            }
             return count;
         }
 
