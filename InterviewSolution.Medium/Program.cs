@@ -34,6 +34,8 @@ namespace InterviewSolution.Medium
             BiSectSqures();
             // Best Lines
             BestLine();
+            // Master mind problem
+            MasterMind();
 
         }
 
@@ -193,6 +195,14 @@ namespace InterviewSolution.Medium
             points.Add(new BestLine.GraphPoint(4.0, 3.0));
             line.FindBestLine(points.ToArray());
 
+        }
+
+        private static void MasterMind()
+        {
+            var mind = new MasterMind();
+            string guess = "GGRR";
+            string solution = "RGBY";
+            Console.WriteLine($" Estimates counts: {mind.estimate(guess, solution)} ");
         }
 
     }
