@@ -38,6 +38,8 @@ namespace InterviewSolution.Medium
             MasterMind();
             // SubSort
             SubSort();
+            // Contiguous Sequence
+            ContiguousSequence();
 
         }
 
@@ -213,6 +215,14 @@ namespace InterviewSolution.Medium
             var unsortedNumbers = new int[] { 1, 2, 4, 7, 10, 11, 8, 12, 5, 6, 16, 18, 19 };
             var subsort = new SubSort();
             subsort.findUnsortedSequence(unsortedNumbers);
+
+        }
+
+        private  static void ContiguousSequence()
+        {
+            var sequence = new ContiguousSequence();
+            var numbers = new int[] {2,-8,3,-2,4,-10 };
+            Console.WriteLine($" Max Number : {sequence.GetMaxSum(numbers)}");  
 
         }
 
