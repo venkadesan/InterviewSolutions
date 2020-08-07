@@ -36,6 +36,8 @@ namespace InterviewSolution.Medium
             BestLine();
             // Master mind problem
             MasterMind();
+            // SubSort
+            SubSort();
 
         }
 
@@ -203,6 +205,15 @@ namespace InterviewSolution.Medium
             string guess = "GGRR";
             string solution = "RGBY";
             Console.WriteLine($" Estimates counts: {mind.estimate(guess, solution)} ");
+        }
+
+
+        private static void SubSort()
+        {
+            var unsortedNumbers = new int[] { 1, 2, 4, 7, 10, 11, 8, 12, 5, 6, 16, 18, 19 };
+            var subsort = new SubSort();
+            subsort.findUnsortedSequence(unsortedNumbers);
+
         }
 
     }
