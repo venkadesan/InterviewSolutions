@@ -20,7 +20,7 @@ namespace InterviewSolution.Medium.Problems
 
             int countOfMain = CountOf(pattern, mainChar);
             int countOfAlt = pattern.Length - countOfMain;
-            int firstAlt = pattern[altChar];
+            int firstAlt = pattern.IndexOf(altChar);
             int maxMainSize = size / countOfMain;
 
             for (int mainSize = 0; mainSize <= maxMainSize; mainSize++)

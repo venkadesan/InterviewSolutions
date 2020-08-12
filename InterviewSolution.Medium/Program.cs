@@ -40,6 +40,8 @@ namespace InterviewSolution.Medium
             SubSort();
             // Contiguous Sequence
             ContiguousSequence();
+            // Pattern Matching
+            PatternMatching();
 
         }
 
@@ -218,12 +220,20 @@ namespace InterviewSolution.Medium
 
         }
 
-        private  static void ContiguousSequence()
+        private static void ContiguousSequence()
         {
             var sequence = new ContiguousSequence();
-            var numbers = new int[] {2,-8,3,-2,4,-10 };
-            Console.WriteLine($" Max Number : {sequence.GetMaxSum(numbers)}");  
+            var numbers = new int[] { 2, -8, 3, -2, 4, -10 };
+            Console.WriteLine($" Max Number : {sequence.GetMaxSum(numbers)}");
 
+        }
+
+        private static void PatternMatching()
+        {
+            var patternMatching = new PatternMatching();
+            string value = "catcatgocatgo";
+            string pattern = "aabab";
+            Console.WriteLine($" Pattern Match {patternMatching.doesMatch(pattern, value)}");
         }
 
     }
