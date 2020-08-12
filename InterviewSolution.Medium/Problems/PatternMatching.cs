@@ -16,7 +16,7 @@ namespace InterviewSolution.Medium.Problems
 
             char mainChar = pattern[0];
             char altChar = mainChar == 'a' ? 'b' : 'a';
-            int size = pattern.Length;
+            int size = value.Length;
 
             int countOfMain = CountOf(pattern, mainChar);
             int countOfAlt = pattern.Length - countOfMain;
