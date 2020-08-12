@@ -59,7 +59,7 @@ namespace InterviewSolution.Medium.Problems
         {
             for (int i = 0; i < size; i++)
             {
-                if (s1[offSet1 + 1] != s1[offSet2 + 1])
+                if (s1[offSet1 + i] != s1[offSet2 + i])
                 {
                     return false;
                 }
