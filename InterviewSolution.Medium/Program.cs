@@ -42,6 +42,8 @@ namespace InterviewSolution.Medium
             ContiguousSequence();
             // Pattern Matching
             PatternMatching();
+            // Pond Size  problem  
+            PondSize();
 
         }
 
@@ -236,5 +238,20 @@ namespace InterviewSolution.Medium
             Console.WriteLine($" Pattern Match {patternMatching.doesMatch(pattern, value)}");
         }
 
+        private static void PondSize()
+        {
+            var pondSize = new PondSizes();
+            int[,] land = new int[,] { { 0,2,1,0}
+                                      ,{0,1,0,1 }
+                                      ,{1,1,0,1 }
+                                       ,{0,1,0,1 }
+                                      };
+            var pondSizes = pondSize.ComputePondSizes(land);
+            if (pondSizes != null && pondSizes.Count > 0)
+            {
+                Console.WriteLine($"Pond sizes: { string.Join(",", pondSizes.ToArray())}");
+            }
+
+        }
     }
 }

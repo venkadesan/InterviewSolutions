@@ -18,7 +18,10 @@ namespace InterviewSolution.Medium.Problems
                     for (int c = 0; c < land.GetLength(1); c++)
                     {
                         int size = computeSize(land, visited, r, c);
-                        sizes.Add(size);
+                        if (size > 0)
+                        {
+                            sizes.Add(size);
+                        }
                     }
                 }
 
@@ -32,7 +35,7 @@ namespace InterviewSolution.Medium.Problems
         {
             int size = 1;
 
-            if (row < 0 || col < 0 || row >= land.GetLength(0) || col >= land.GetLength(row) || visited[row, col] || land[row, col] != 0)
+            if (row < 0 || col < 0 || row >= land.GetLength(0) || col >= land.GetLength(1) || visited[row, col] || land[row, col] != 0)
             {
                 return 0;
             }
@@ -41,7 +44,7 @@ namespace InterviewSolution.Medium.Problems
             {
                 for (int dc = -1; dc <= 1; dc++)
                 {
-                    size += computeSize(land, visited, row + dr, col + dr);
+                    size += computeSize(land, visited, row + dr, col + dc);
                 }
             }
             return size;
