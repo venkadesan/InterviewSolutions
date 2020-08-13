@@ -4,8 +4,7 @@ using System.Text;
 
 namespace InterviewSolution.Medium.Problems
 {
-    public class PondSizes
+    public class OldCellPhone
     {
-
     }
 }
