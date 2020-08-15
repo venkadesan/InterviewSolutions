@@ -13,3 +13,5 @@ reportPerimeter(square1.length, reportList);
 //use default
 
 let square2 = randomSquare(myCanvas.ctx);
+
+
