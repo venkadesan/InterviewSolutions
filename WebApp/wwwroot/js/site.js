@@ -46,4 +46,25 @@ console.log("foo2 returns:");
 console.log(foo2());
 
 
+function LCMCalculator() {
+    let checkInt = function (x) {
+        if (x % 1 !== 0) {
+            throw new TypeError(x + "is not an integration");
+        };
+        this.a = checkInt(x)
+        this.b = checkInt(y);
+    }
+}
+
+LCMCalculator.prototype = {
+    constructor: LCMCalculator,
+    gcd: function () {
+        let a = Math.abs(this.a), b = Math.abs(this.b), t;
+        if (a < b) {
+            [a,b] =[]
+        }
+    }
+}
+
+
 
