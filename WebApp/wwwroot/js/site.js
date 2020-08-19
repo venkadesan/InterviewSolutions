@@ -109,4 +109,26 @@ function sum(x) {
     }
 }
 
+//function sum(x, y) {
+//    if (y != undefined) {
+//        return x + y;
+//    }
+//    else {
+//       return function(y) { return x + y;}
+
+//    }
+//}
+
+console.log("Passing as 2 arguments: Sum:" + sum(2, 4));
+console.log("Passing as 1 argument: " + sum(2)(3));
+
+debugger;
+
+for (let i = 0; i < 5; i++) {
+    var btn = document.createElement('button');
+    btn.appendChild(document.createTextNode('Button ' + i));
+    btn.addEventListener('click', function () { console.log(i) });
+    document.body.appendChild(btn);
+}
+
 
