@@ -188,10 +188,80 @@ var globalVar = "xyz";
     })(456);
 })(123);
 
-for(let i = 0; i < 5; i++)
-{
-    setTimeout(function () { console.log(i); }, i * 1000 );
+
+// Difference between var and let.
+for (let i = 0; i < 5; i++) {
+    setTimeout(function () { console.log(i); }, i * 1000);
 }
+
+debugger;
+
+console.log("0 || 1 = " + (0 || 1));
+console.log("1 || 2 = " + (1 || 2));
+console.log("0 && 1 = " + (0 && 1));
+console.log("1 && 2 = " + (1 && 2));
+
+console.log(false == '0');
+console.log(false === '0');
+
+var a = {},
+    b = { key: 'b' },
+    c = { key: 'c' };
+
+a[b] = 123;
+a[c] = 456;
+console.log(a[b]);
+
+console.log(function f(n) { return ((n > 1) ? n * f(n - 1) : n) }(10));
+
+(function (x) {
+    return (function (y) {
+        console.log(x);
+    })(2)
+})(1);
+
+
+var hero = {
+    _name = 'John Doe',
+    getSecretIdentity: function () {
+        return this._name;
+    }
+};
+
+var storeSecretIdentity = hero.getSecretIdentity;
+
+console.log(storeSecretIdentity());
+consoel.log(hero.getSecretIdentity());
+
+
 
 console.log(1 < 2 < 3);
 console.log(3 > 2 > 1);
+
+
+//ECMA script adding before and start.
+var myArray = ['1', 'b', 'c', 'd'];
+console.log('before adding: ' + myArray);
+myArray = ['start', ...myArray, 'end'];
+console.log('after adding: ' + myArray);
+
+var a = [1, 2, 3];
+a[6] = 10;
+console.log('Number:' + a[6]);
+console.log('Empty Slots:' + a[4]);
+
+console.log("type checking type of undefined to type of NULL" + typeof undefined == typeof NULL);
+console.log("type of type of " + typeof typeof 1);
+
+
+var b = 1;
+function outer() {
+    var b = 2
+    function inner() {
+        b++;
+        var b = 3;
+        console.log(b);
+    }
+    inner();
+}
+outer();
