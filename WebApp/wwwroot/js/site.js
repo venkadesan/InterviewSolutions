@@ -122,7 +122,7 @@ function sum(x) {
 console.log("Passing as 2 arguments: Sum:" + sum(2, 4));
 console.log("Passing as 1 argument: " + sum(2)(3));
 
-debugger;
+
 
 for (let i = 0; i < 5; i++) {
     var btn = document.createElement('button');
@@ -132,3 +132,66 @@ for (let i = 0; i < 5; i++) {
 }
 
 
+var d = [];
+
+['zebra', 'house'].forEach(function (k) {
+    d[k] = undefined;
+});
+
+var arr1 = "John".split('');
+var arr2 = arr1.reverse();
+var arr3 = "venkat".split('');
+arr2.push(arr3);
+console.log("array1 : length=" + arr1.length + " last=" + arr1.slice(-1));
+console.log("array2 : length=" + arr2.length + " last=" + arr2.slice(-1));
+
+
+console.log(1 + "2" + "2");
+console.log(1 + +"2" + "2");
+console.log(1 + -"1" + "2");
+console.log(+"1" + -"1" + "2");
+console.log("A" - "B" + "2");
+console.log("A" - "B" + 2);
+
+
+//debugger;
+function GetHugeList() {
+    var list = [];
+    for (var i = 0; i < 1000; i++) {
+        list[i] = i;
+    }
+    return list;
+}
+
+var list = GetHugeList();
+var nextListItem = function () {
+    var item = list.pop();
+    if (item) {
+        setTimeout(nextListItem, 0);
+    }
+}
+
+
+var globalVar = "xyz";
+
+(function outerFunc(outerArg) {
+    var outerVar = "a";
+    (function innterFun(innerArg) {
+        var innerVar = "b";
+        console.log("outerArg =" + outerArg + "\n" +
+            "innerArg =" + innerArg + "\n" +
+            "outerArg =" + outerArg + "\n" +
+            "ounterVar =" + outerVar + "\n" +
+            "innerVar = " + innerVar + "\n" +
+            "globalVar = " + globalVar + "n");
+
+    })(456);
+})(123);
+
+for(let i = 0; i < 5; i++)
+{
+    setTimeout(function () { console.log(i); }, i * 1000 );
+}
+
+console.log(1 < 2 < 3);
+console.log(3 > 2 > 1);
