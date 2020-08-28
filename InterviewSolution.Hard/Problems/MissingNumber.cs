@@ -12,7 +12,5 @@ namespace InterviewSolution.Hard.Problems
             int num = 0;
             return num;
         }
-
-        
     }
 }
