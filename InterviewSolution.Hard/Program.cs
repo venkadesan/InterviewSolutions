@@ -13,8 +13,8 @@ namespace InterviewSolution.Hard
             ShuffleArray();
             // Random Set
             RandomSet();
-
-
+            // Letters and Numbers
+            LettersAndNumbers();
         }
 
         private static void AddingWithoutPlus()
@@ -41,12 +41,26 @@ namespace InterviewSolution.Hard
             var randomSet = new RandomSet();
             var original = new int[10] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
             int m = 5;
-           var result =  randomSet.PickMInIteratively(original, m);
+            var result = randomSet.PickMInIteratively(original, m);
             if (result != null && result.Length > 0)
             {
                 foreach (var num in result)
                 {
                     Console.WriteLine($"Random set {num}");
+                }
+            }
+        }
+
+        private static void LettersAndNumbers()
+        {
+            var lettersAndNumbers = new LettersAndNumbers();
+            char[] array = new char[] { 'A', 'B', 'A', 'A', 'A', 'B', 'B', 'B', 'A' };
+            var subArray = lettersAndNumbers.FindLongestSubArray(array);
+            if (subArray?.Length > 0)
+            {
+                foreach (var sArr in subArray)
+                {
+                    Console.WriteLine($"LongestSubArray: {sArr}");
                 }
             }
         }

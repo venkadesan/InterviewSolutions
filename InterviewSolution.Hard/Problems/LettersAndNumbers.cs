@@ -49,7 +49,7 @@ namespace InterviewSolution.Hard.Problems
             map.Add(0, -1);
             for (int i = 0; i < deltas.Length; i++)
             {
-                if (map.ContainsKey(deltas[i]))
+                if (!map.ContainsKey(deltas[i]))
                 {
                     map.Add(deltas[i], i);
                 }
