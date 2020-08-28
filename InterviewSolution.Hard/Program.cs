@@ -15,6 +15,8 @@ namespace InterviewSolution.Hard
             RandomSet();
             // Letters and Numbers
             LettersAndNumbers();
+            // count of 2s in range
+            CountOf2InRange();
         }
 
         private static void AddingWithoutPlus()
@@ -63,6 +65,14 @@ namespace InterviewSolution.Hard
                     Console.WriteLine($"LongestSubArray: {sArr}");
                 }
             }
+        }
+
+
+        private static void CountOf2InRange()
+        {
+            var countOf2S = new CountOf2s();
+            int number = 100;
+            Console.WriteLine($" {countOf2S.Count2sInRange(number)}");
         }
 
     }
