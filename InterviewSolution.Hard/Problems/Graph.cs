@@ -23,6 +23,10 @@ namespace InterviewSolution.Hard.Problems
         public void CreateNode(string name, int count)
         {
             var newNode = new GraphNode(name, count);
+            if (Nodes == null)
+            {
+                Nodes = new List<GraphNode>();
+            }
             if (!Nodes.Contains(newNode))
             {
                 Nodes.Add(newNode);
@@ -36,18 +40,29 @@ namespace InterviewSolution.Hard.Problems
         {
             if (!string.IsNullOrWhiteSpace(nodeName1) && !string.IsNullOrWhiteSpace(nodeName2))
             {
-                var node1 = Nodes.Where(node => node.Equals(nodeName1)).FirstOrDefault();
-                var node2 = Nodes.Where(node => node.Equals(nodeName2)).FirstOrDefault();
-                if (node1 != null && node2 != null)
+                var node1 = Nodes.Where(node => node.Name.Equals(nodeName1)).FirstOrDefault();
+                var node2 = Nodes.Where(node => node.Name.Equals(nodeName2)).FirstOrDefault();
+                if (node1 == null)
                 {
-                    if (!node1.AdjacentNodes.Contains(node2))
-                    {
-                        node1.AdjacentNodes.Add(node2);
-                    }
-                    if (!node2.AdjacentNodes.Contains(node1))
-                    {
-                        node2.AdjacentNodes.Add(node1);
-                    }
+                    node1 = new GraphNode(nodeName1, 0);
+                    Nodes.Add(node1);
+                }
+                if (node2 == null)
+                {
+                    node2 = new GraphNode(nodeName2, 0);
+                    Nodes.Add(node2);
+                }
+
+                if (node1.AdjacentNodes == null) node1.AdjacentNodes = new List<GraphNode>();
+                if (!node1.AdjacentNodes.Contains(node2))
+                {
+                    node1.AdjacentNodes.Add(node2);
+                }
+
+                if (node2.AdjacentNodes == null) node2.AdjacentNodes = new List<GraphNode>();
+                if (!node2.AdjacentNodes.Contains(node1))
+                {
+                    node2.AdjacentNodes.Add(node1);
                 }
             }
         }
@@ -67,6 +82,8 @@ namespace InterviewSolution.Hard.Problems
         public string Name { get; set; }
         public int Count { get; set; }
 
+        public bool IsVisited { get; set; }
+
         #endregion
 
 
@@ -80,6 +97,7 @@ namespace InterviewSolution.Hard.Problems
 
         #region 
         public List<GraphNode> AdjacentNodes { get; set; }
+        #endregion
 
     }
     #endregion

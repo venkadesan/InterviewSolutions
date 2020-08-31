@@ -1,6 +1,6 @@
 ﻿using System;
 using InterviewSolution.Hard.Problems;
-
+using System.Collections.Generic;
 namespace InterviewSolution.Hard
 {
     class Program
@@ -17,6 +17,8 @@ namespace InterviewSolution.Hard
             LettersAndNumbers();
             // count of 2s in range
             CountOf2InRange();
+            // Baby names
+            BabyNames();
         }
 
         private static void AddingWithoutPlus()
@@ -74,6 +76,33 @@ namespace InterviewSolution.Hard
             int number = 100;
             Console.WriteLine($" {countOf2S.Count2sInRange(number)}");
         }
+
+        private static void BabyNames()
+        {
+            var babyNames = new BabyNames();
+            var names = new Dictionary<string, int>();
+            names.Add("John", 15);
+            names.Add("Jon", 12);
+            names.Add("Chris", 13);
+            names.Add("Kris", 4);
+            names.Add("Christopher", 19);
+
+            var synonyms = new List<BabyNames.Synonym>();
+            synonyms.Add(new BabyNames.Synonym("Jon", "John"));
+            synonyms.Add(new BabyNames.Synonym("John", "Johnny"));
+            synonyms.Add(new BabyNames.Synonym("Chris", "Kris"));
+            synonyms.Add(new BabyNames.Synonym("Chris", "Christopher"));
+            var popularNames = babyNames.TrulyMostPopular(names, synonyms);
+            if (popularNames != null && popularNames.Count > 0)
+            {
+                foreach (var name in popularNames)
+                {
+                    Console.WriteLine($"Name:{name.Key}, Key: {name.Value}");
+                }
+
+            }
+        }
+
 
     }
 }
