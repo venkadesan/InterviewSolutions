@@ -3,29 +3,42 @@ using System.Linq;
 
 namespace InterviewSolution.Hard.Problems
 {
+    #region Graph Class
     public class Graph
     {
+        #region properties
         public List<GraphNode> Nodes { get; set; }
+        #endregion
+
+        #region constructor
         public Graph()
         {
 
         }
-        public void CreateNode(string name)
+        #endregion
+
+        #region public methods
+
+        #region CreateNode
+        public void CreateNode(string name, int count)
         {
-            var newNode = new GraphNode(name);
+            var newNode = new GraphNode(name, count);
             if (!Nodes.Contains(newNode))
             {
                 Nodes.Add(newNode);
             }
         }
+        #endregion
 
+
+        #region AddEdeges
         public void AddEdges(string nodeName1, string nodeName2)
         {
             if (!string.IsNullOrWhiteSpace(nodeName1) && !string.IsNullOrWhiteSpace(nodeName2))
             {
                 var node1 = Nodes.Where(node => node.Equals(nodeName1)).FirstOrDefault();
                 var node2 = Nodes.Where(node => node.Equals(nodeName2)).FirstOrDefault();
-                if(node1!=null && node2!=null)
+                if (node1 != null && node2 != null)
                 {
                     if (!node1.AdjacentNodes.Contains(node2))
                     {
@@ -38,17 +51,39 @@ namespace InterviewSolution.Hard.Problems
                 }
             }
         }
-    }
+        #endregion
 
+        #endregion
+
+    }
+    #endregion
+
+
+    #region GraphNode
     public class GraphNode
     {
+
+        #region properites
         public string Name { get; set; }
-        public GraphNode(string name)
+        public int Count { get; set; }
+
+        #endregion
+
+
+        #region constructor
+        public GraphNode(string name, int count)
         {
             Name = name;
+            Count = count;
         }
+        #endregion
+
+        #region 
         public List<GraphNode> AdjacentNodes { get; set; }
 
     }
+    #endregion
+
+
 
 }
