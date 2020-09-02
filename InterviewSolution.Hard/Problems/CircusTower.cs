@@ -46,8 +46,7 @@ namespace InterviewSolution.Hard.Problems
                     }
                 }
 
-                var clonedArray = new HeightWeight[] { };
-                bestSequence.CopyTo(clonedArray);
+                var clonedArray = (HeightWeight[])bestSequence.ToArray().Clone();
                 var best = new List<HeightWeight>(clonedArray);
                 best.Add(hwt);
                 return best;

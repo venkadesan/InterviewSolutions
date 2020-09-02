@@ -7,18 +7,20 @@ namespace InterviewSolution.Hard
     {
         static void Main(string[] args)
         {
-            // Adding without Plus
+            //1. Adding without Plus
             AddingWithoutPlus();
-            // Shuffle Array
+            //2. Shuffle Array
             ShuffleArray();
-            // Random Set
+            //3. Random Set
             RandomSet();
-            // Letters and Numbers
+            //4. Letters and Numbers
             LettersAndNumbers();
-            // count of 2s in range
+            //5. count of 2s in range
             CountOf2InRange();
-            // Baby names
+            //6. Baby names
             BabyNames();
+            // 7.Circus Tower
+            CirCusTower();
         }
 
         private static void AddingWithoutPlus()
@@ -86,7 +88,7 @@ namespace InterviewSolution.Hard
             names.Add("Chris", 13);
             names.Add("Kris", 4);
             names.Add("Christopher", 19);
-
+            
             var synonyms = new List<BabyNames.Synonym>();
             synonyms.Add(new BabyNames.Synonym("Jon", "John"));
             synonyms.Add(new BabyNames.Synonym("John", "Johnny"));
@@ -100,6 +102,29 @@ namespace InterviewSolution.Hard
                     Console.WriteLine($"Name:{name.Key}, Key: {name.Value}");
                 }
 
+            }
+        }
+
+
+        private static void CirCusTower()
+        {
+            var tower = new CircusTower();
+            var persons = new List<HeightWeight>() {
+                 new HeightWeight(5.5m,80.1m),
+                 new HeightWeight(5.2m,70.1m),
+                 new HeightWeight(5.3m,90.1m),
+                 new HeightWeight(5.4m,80.1m),
+                 new HeightWeight(6.0m,94.1m),
+                new HeightWeight(6.2m,95.1m),
+                new HeightWeight(5.0m,70.1m),
+            };
+            var longestTower = tower.GetLongestSequeuence(persons);
+            if (longestTower?.Count > 0)
+            {
+                foreach (var person in longestTower)
+                {
+                    Console.WriteLine($" Height:{person.Height}, Weight : {person.Weight}");
+                }
             }
         }
 
