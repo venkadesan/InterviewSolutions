@@ -4,8 +4,10 @@ using System.Text;
 
 namespace InterviewSolution.Hard.Problems
 {
+    #region KthMultiple
     public class KthMultiple
     {
+        #region kthMultiple
         public int GetKthMultiple(int k)
         {
             int val = 0;
@@ -45,5 +47,9 @@ namespace InterviewSolution.Hard.Problems
             }
             return val;
         }
+        #endregion
+
     }
+    #endregion
+
 }

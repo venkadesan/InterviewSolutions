@@ -23,6 +23,8 @@ namespace InterviewSolution.Hard
             CirCusTower();
             //8. Kth Multiple.
             KthMultiple();
+            //9. Majoirity Elements
+            FindMajorityElement();
         }
 
         private static void AddingWithoutPlus()
@@ -137,6 +139,16 @@ namespace InterviewSolution.Hard
             var number = 4;
             Console.WriteLine($"{kthMultipe.GetKthMultiple(number)}");
         }
+
+
+        private static void FindMajorityElement()
+        {
+            var numbers = new List<int>() {1,2,5,9,5,9,5,5,5};
+            var majorityElements = new MajoirityElement();
+            Console.WriteLine($"Majority Elements  {majorityElements.FindMajorityElement(numbers)}");
+        }
+
+
 
     }
 }

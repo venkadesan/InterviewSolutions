@@ -34,7 +34,7 @@ namespace InterviewSolution.Hard.Problems
                 {
                     if (count == 0)
                     {
-                        majority = count;
+                        majority = num;
                     }
                     if (num == majority)
                     {
