@@ -6,5 +6,6 @@ namespace InterviewSolution.Hard.Problems
 {
     public class MajoirityElement
     {
+        
     }
 }
