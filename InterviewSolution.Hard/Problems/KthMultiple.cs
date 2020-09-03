@@ -20,8 +20,8 @@ namespace InterviewSolution.Hard.Problems
             for (int i = 0; i <= k; i++)
             {
                 int v3 = queue3.Count > 0 ? queue3.First.Value : int.MaxValue;
-                int v5 = queue5.Count > 0 ? queue3.First.Value : int.MaxValue;
-                int v7 = queue7.Count > 0 ? queue3.First.Value : int.MaxValue;
+                int v5 = queue5.Count > 0 ? queue5.First.Value : int.MaxValue;
+                int v7 = queue7.Count > 0 ? queue7.First.Value : int.MaxValue;
 
                 val = Math.Min(v3, Math.Min(v5, v7));
 

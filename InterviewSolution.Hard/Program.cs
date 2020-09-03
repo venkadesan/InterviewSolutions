@@ -21,6 +21,8 @@ namespace InterviewSolution.Hard
             BabyNames();
             // 7.Circus Tower
             CirCusTower();
+            //8. Kth Multiple.
+            KthMultiple();
         }
 
         private static void AddingWithoutPlus()
@@ -88,7 +90,7 @@ namespace InterviewSolution.Hard
             names.Add("Chris", 13);
             names.Add("Kris", 4);
             names.Add("Christopher", 19);
-            
+
             var synonyms = new List<BabyNames.Synonym>();
             synonyms.Add(new BabyNames.Synonym("Jon", "John"));
             synonyms.Add(new BabyNames.Synonym("John", "Johnny"));
@@ -128,6 +130,13 @@ namespace InterviewSolution.Hard
             }
         }
 
+
+        private static void KthMultiple()
+        {
+            var kthMultipe = new KthMultiple();
+            var number = 4;
+            Console.WriteLine($"{kthMultipe.GetKthMultiple(number)}");
+        }
 
     }
 }

@@ -6,6 +6,10 @@ namespace InterviewSolution.Hard.Problems
 {
     public class MajoirityElement
     {
-        
+        public int FindMajorityElement()
+        {
+            //int 
+            return 0;
+        }
     }
 }
