@@ -7,7 +7,7 @@ console.log("a defined?" + (typeof a !== 'undefined'));
 console.log("b defined?" + (typeof b !== 'undefined'));
 
 var bar = null;
-console.log(typeof bar != null && typeof bar === "object");
+console.log(typeof bar !== null && typeof bar === "object");
 
 
 var myobject = {
@@ -35,9 +35,9 @@ function foo1() {
 function foo2() {
     return
     {
-        bar: "hello"
+        bar: "hello";
     };
-}
+};
 
 
 console.log("foo1 returns:");
@@ -51,13 +51,11 @@ function LCMCalculator() {
     let checkInt = function (x) {
         if (x % 1 !== 0) {
             throw new TypeError(x + "is not an integration");
-        };
-        this.a = checkInt(x)
+        }
+        this.a = checkInt(x);
         this.b = checkInt(y);
-    }
-
-
-}
+    };
+       }
 
 /*    */
 LCMCalculator.prototype = {
@@ -76,7 +74,7 @@ LCMCalculator.prototype = {
 }
 
 console.log(0.1 + 0.2);
-console.log(0.1 + 0.2 == 0.3);
+console.log(0.1 + 0.2 === 0.3);
 
 
 function AreTheNumbersEqual(num1, num2) {
@@ -94,14 +92,14 @@ console.log(AreTheNumbersEqual(0.1 + 0.1, 0.2));
 
 function isPalindrome(str) {
     str = str.replace(/\W/g, '').toLowerCase();
-    return (str == str.split('').reverse().join(''));
+    return (str === str.split('').reverse().join(''));
 }
 
 var paliText = 'liril';
 console.log('palindrom:' + isPalindrome(paliText));
 
 function sum(x) {
-    if (arguments.length == 2) {
+    if (arguments.length === 2) {
         return arguments[0] + arguments[1];
     }
     else {
@@ -201,7 +199,7 @@ console.log("1 || 2 = " + (1 || 2));
 console.log("0 && 1 = " + (0 && 1));
 console.log("1 && 2 = " + (1 && 2));
 
-console.log(false == '0');
+console.log(false === '0');
 console.log(false === '0');
 
 var a = {},
@@ -221,17 +219,17 @@ console.log(function f(n) { return ((n > 1) ? n * f(n - 1) : n) }(10));
 })(1);
 
 
-var hero = {
-    _name = 'John Doe',
-    getSecretIdentity: function () {
-        return this._name;
-    }
-};
+//var hero = {
+//    _name = 'John Doe',
+//    getSecretIdentity: function () {
+//        return this._name;
+//    }
+//};
 
-var storeSecretIdentity = hero.getSecretIdentity;
+//var storeSecretIdentity = hero.getSecretIdentity;
 
-console.log(storeSecretIdentity());
-consoel.log(hero.getSecretIdentity());
+//console.log(storeSecretIdentity());
+//consoel.log(hero.getSecretIdentity());
 
 
 
@@ -250,7 +248,7 @@ a[6] = 10;
 console.log('Number:' + a[6]);
 console.log('Empty Slots:' + a[4]);
 
-console.log("type checking type of undefined to type of NULL" + typeof undefined == typeof NULL);
+console.log("type checking type of undefined to type of NULL" + typeof undefined === typeof NULL);
 console.log("type of type of " + typeof typeof 1);
 
 
@@ -265,3 +263,36 @@ function outer() {
     inner();
 }
 outer();
+
+let saying = new Map();
+saying.set('dog', 'woof');
+saying.set('cat', 'meow');
+
+
+saying.size;
+saying.get('dog');
+saying.get('elephant');
+
+saying.has('dog');
+saying.has('duck');
+saying.delete('dog');
+saying.has('dog');
+
+for (let [key, value] of saying) {
+    console.log(key + 'goes' + value);
+}
+saying.clear();
+saying.size;
+
+
+let handler = {
+    get: function (target, name) {
+        return name in target ? target[name] : 42;
+    }
+};
+
+let p = new Proxy({}, handler);
+p.a = 1;
+console.log(p.a, p.b);
+
+
