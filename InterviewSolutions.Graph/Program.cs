@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using InterviewSolutions.DataStructure;
 using InterviewSolutions.Graph.Helper;
+using InterviewSolutions.Graph.Problems;
+
 namespace InterviewSolutions.Graph
 {
     class Program
@@ -11,10 +13,17 @@ namespace InterviewSolutions.Graph
 
             var G = BuildGraph();
             var startNode = G.Nodes[0];
+
+            //TopologicalSorting
+
+            TopologicalSorting(G);
+
             SearchHelper.BreadthFirstSearch(startNode);
             // need to reset for node search status to unvisited.
             SearchHelper.DepthFirstSearch(startNode);
             SearchHelper.DepthFirstSearchIterative(startNode);
+
+
 
         }
 
@@ -42,7 +51,7 @@ namespace InterviewSolutions.Graph
             G.Add_Vertex(node1, node4);
 
 
-            G.Add_Vertex(node3, node2);
+            //G.Add_Vertex(node3, node2);
             G.Add_Vertex(node3, node4);
 
             G.Add_Vertex(node2, node1);
@@ -63,6 +72,19 @@ namespace InterviewSolutions.Graph
                 Console.WriteLine($"{source.Name} Route Not Exists {dest.Name}");
             }
             return false;
+        }
+
+        private static void TopologicalSorting(DataStructure.Graph G)
+        {
+            var orderingNodes = new Stack<GraphNode>();
+            SortingUtil.ToplogicalSortUtil(G, orderingNodes);
+            if (orderingNodes?.Count > 0)
+            {
+                while (orderingNodes.Count > 0)
+                {
+                    Console.WriteLine($"Node Name:  {orderingNodes.Pop().Name}");
+                }
+            }
         }
     }
 }

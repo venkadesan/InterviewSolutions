@@ -31,8 +31,14 @@ namespace InterviewSolutions.DataStructure
         #region Public Method
         public void Add_Vertex(GraphNode source, GraphNode destination)
         {
-            if (source.Neighbors == null) source.Neighbors = new List<GraphNode>();
-            if (!source.Neighbors.Contains(destination)) source.Neighbors.Add(destination);
+            if (source.Neighbors == null)
+            {
+                source.Neighbors = new List<GraphNode>();
+            }
+            if (!source.Neighbors.Contains(destination))
+            {
+                source.Neighbors.Add(destination);
+            }
         }
 
 
